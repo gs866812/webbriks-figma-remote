@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-color{
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.842), rgba(66, 66, 66, 0.685));
+}
+.bg-service{
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.842), rgba(66, 66, 66, 0.685));
+}
+.bg-subtitle{
+    background-color: rgba(0, 0, 0, 0.541);
+}

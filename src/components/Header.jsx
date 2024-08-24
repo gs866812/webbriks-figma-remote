@@ -14,7 +14,17 @@ const Header = () => {
                 <nav className="hidden md:flex space-x-6">
                     <Link href="/" className="text-white hover:text-orange-400">Home</Link>
                     <Link href="/about" className="text-white hover:text-orange-400">About Us</Link>
-                    <Link href="/services" className="text-white hover:text-orange-400">Services</Link>
+                    <div className="relative group">
+                        <Link href="#" className="text-white hover:text-orange-400">Services</Link>
+                        <div className="absolute hidden group-hover:block bg-gray-700 text-white py-2 space-y-2 border">
+                            <Link href="/services/graphic-design" className="block px-4 hover:bg-gray-600">Graphic Design</Link>
+                            <Link href="/services/photo-editing" className="block px-4 hover:bg-gray-600">Photo Editing</Link>
+                            <Link href="/services/web-design" className="block px-4 hover:bg-gray-600">Web Design & Development</Link>
+                            <Link href="/services/virtual-assistant" className="block px-4 hover:bg-gray-600">Virtual Assistant</Link>
+                            <Link href="/services/video-editing" className="block px-4 hover:bg-gray-600">Video Editing</Link>
+                            <Link href="/services/digital-marketing" className="block px-4 hover:bg-gray-600">Digital Marketing</Link>
+                        </div>
+                    </div>
                     <Link href="/portfolio" className="text-white hover:text-orange-400">Portfolio</Link>
                     <Link href="/contact" className="text-white hover:text-orange-400">Contact Us</Link>
                 </nav>

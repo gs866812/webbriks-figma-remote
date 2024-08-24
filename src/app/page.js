@@ -1,9 +1,14 @@
+import AboutUs from '@/components/AboutUs';
+import ServicesSection from '@/components/ServicesSection';
+import SliderOne from '@/components/SliderOne';
 import React from 'react';
 
 const Home = () => {
   return (
     <div>
-      <h2 className="text-red-700">This is home</h2>
+      <SliderOne/>
+      <ServicesSection/>
+      <AboutUs/>
     </div>
   );
 };
