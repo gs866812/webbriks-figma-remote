@@ -5,9 +5,19 @@
 .bg-color{
     background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.842), rgba(66, 66, 66, 0.685));
 }
-.bg-service{
-    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.842), rgba(66, 66, 66, 0.685));
+.bg-cta{
+    background-image: linear-gradient(to bottom right, #022d5df5, #080808ef);
 }
+.bg-cta-about{
+    background-color: #fafafaec;
+}
+.bg-about{
+    background-image: linear-gradient(to bottom right, #f5f1f1, #f8f8f8ce);
+}
+.bg-about-top{
+    background-color: #000000cf;
+}
+
 .bg-subtitle{
-    background-color: rgba(0, 0, 0, 0.541);
+    background-color: #0000008a;
 }

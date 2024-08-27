@@ -1,14 +1,42 @@
-import AboutUs from '@/components/AboutUs';
-import ServicesSection from '@/components/ServicesSection';
-import SliderOne from '@/components/SliderOne';
-import React from 'react';
+"use client";
+import AboutUs from "@/components/AboutUs";
+import CTASection from "@/components/CTASection";
+import PortfolioSection from "@/components/PortfolioSection";
+import ServicesSection from "@/components/ServicesSection";
+import SliderOne from "@/components/SliderOne";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import aos from "aos";
+import React, { useEffect } from "react";
 
 const Home = () => {
+  useEffect(() => {
+    aos.init({
+      // You can customize the options here
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true, // Animation should happen only once - while scrolling down
+    });
+  }, []);
   return (
     <div>
-      <SliderOne/>
-      <ServicesSection/>
-      <AboutUs/>
+      <section>
+        <SliderOne />
+      </section>
+      <section data-aos='fade-up'>
+        <ServicesSection />
+      </section>
+      <section data-aos='fade-up'>
+        <AboutUs />
+      </section>
+      <section data-aos='fade-up'>
+        <PortfolioSection />
+      </section>
+      <section data-aos='fade-up'>
+        <CTASection />
+      </section>
+      <section data-aos='fade-up'>
+        <TestimonialsCarousel />
+      </section>
     </div>
   );
 };

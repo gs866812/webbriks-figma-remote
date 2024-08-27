@@ -13,7 +13,7 @@ const ServiceCard = ({ imgSrc, title, description, link }) => {
       <h3 className="text-2xl font-semibold mb-2 text-gray-800">{title}</h3>
       <p className="text-gray-600">{description}</p>
 
-        <Link href={link} className="inline-block w-full bg-orange-400 text-gray-900 px-4 py-2 rounded-sm hover:bg-gray-900 hover:text-gray-200 transition-colors mt-8 lg:mt-10">
+        <Link href={link} className="inline-block w-full bg-gray-800 text-gray-100 px-4 py-2 rounded-md hover:bg-orange-400 hover:text-gray-800 transition-colors mt-8 lg:mt-10">
           Explore More
         </Link>
 

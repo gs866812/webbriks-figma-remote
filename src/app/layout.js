@@ -1,10 +1,11 @@
 import "./globals.css";
+import 'aos/dist/aos.css'; // Import the CSS
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import { NavigationbarWithDropdownMultilevelMenu } from "@/components/Navbar";
 import { NavigationbarWithDropdownMultilevelMenu2 } from "@/components/Navbar2";
-
-
-
-
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Home | Web-briks",
@@ -13,16 +14,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme='light'>
+    <html lang="en" data-theme="light">
       <body>
         <header className="lg:sticky lg:-top-2 z-50 shadow-md">
-          <NavigationbarWithDropdownMultilevelMenu/>  
+          <NavigationbarWithDropdownMultilevelMenu />
           {/* <NavigationbarWithDropdownMultilevelMenu2/>   */}
         </header>
-        
-        <main className='z-0'>{children}</main>
 
-        <h2>Footer</h2>
+        <main className="z-0">{children}</main>
+
+        <footer>
+          <Footer />
+        </footer>
       </body>
     </html>
   );
