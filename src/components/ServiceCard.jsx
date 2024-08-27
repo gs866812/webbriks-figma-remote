@@ -8,7 +8,7 @@ const ServiceCard = ({ imgSrc, title, description, link }) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-5 text-center border hover:shadow-xl transition-shadow duration-300 py-10">
       <div className="mb-4 flex justify-center">
-        <Image src={imgSrc} alt={title} width={100} height={100} className="" />
+        <Image src={imgSrc} alt={title} width={100} objectFit='cover' height={100} />
       </div>
       <h3 className="text-2xl font-semibold mb-2 text-gray-800">{title}</h3>
       <p className="text-gray-600">{description}</p>

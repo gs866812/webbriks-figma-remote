@@ -3,7 +3,7 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/f
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-gray-100 py-16">
+    <footer className="bg-gray-800 text-gray-100 pt-16">
       <div className="container mx-auto text-center md:text-start">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {/* About Section */}
@@ -49,9 +49,9 @@ const Footer = () => {
           {/* Contact Section */}
           <div>
             <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
-            <p className="text-gray-400 mb-2">Email: contact@yourdomain.com</p>
+            <p className="text-gray-400 mb-2">Email: contact@webbriks.com</p>
             <p className="text-gray-400 mb-2">Phone: +123 456 7890</p>
-            <p className="text-gray-400">Address: 123 Your Street, City, Country</p>
+            <p className="text-gray-400">Address: Zigzag road, Masterpara, Gaibandha, BD</p>
           </div>
 
           {/* Social Media Section */}
@@ -73,9 +73,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
+        <div className="border-t border-gray-700 mt-8 py-8 text-center">
           <p className="text-gray-500">
-            &copy; {new Date().getFullYear()} Web-briks. All rights reserved.
+            &copy; {new Date().getFullYear()} <Link href='/' className='text-gray-200 hover:text-orange-400'>Web-briks</Link>. All rights reserved.
           </p>
         </div>
       </div>
