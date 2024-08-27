@@ -89,9 +89,9 @@ const AboutUs = () => {
 
       {/* Team Section */}
       <section className="py-16 bg-gray-100 text-gray-800">
-        <div className="container mx-auto px-5 lg:px-20">
+        <div className="container mx-auto px-5">
           <h2 className="text-3xl font-bold mb-8 text-center">Meet Our Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {/* Team Member 1 */}
             <div className="text-center">
               <div className="relative w-40 h-40 mx-auto mb-4">
@@ -109,6 +109,14 @@ const AboutUs = () => {
               <p className="text-orange-500">Chief Designer</p>
             </div>
             {/* Team Member 3 */}
+            <div className="text-center">
+              <div className="relative w-40 h-40 mx-auto mb-4">
+                <Image src='' alt="Team Member 3" layout="fill" objectFit="cover" className="rounded-full" />
+              </div>
+              <h3 className="text-2xl font-semibold">Alice Johnson</h3>
+              <p className="text-orange-500">Marketing Head</p>
+            </div>
+            {/* Team Member 4 */}
             <div className="text-center">
               <div className="relative w-40 h-40 mx-auto mb-4">
                 <Image src='' alt="Team Member 3" layout="fill" objectFit="cover" className="rounded-full" />

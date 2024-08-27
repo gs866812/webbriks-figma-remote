@@ -3,19 +3,19 @@ import PortfolioCard from './PortfolioCard';
 
 const portfolioItems = [
   {
-    imgSrc: '/images/portfolio1.gif', // Replace with your image paths
+    imgSrc: 'https://iili.io/dhkgh0P.webp', // Replace with your image paths
     title: 'Brand Identity for XYZ Corp',
     description: 'A complete rebranding project including logo design, website redesign, and marketing materials.',
     link: '/portfolio/xyz-corp',
   },
   {
-    imgSrc: '/images/portfolio2.png',
+    imgSrc: 'https://iili.io/dhkgXqB.webp',
     title: 'E-commerce Website for ABC Store',
     description: 'Developed a responsive e-commerce platform with custom features and seamless user experience.',
     link: '/portfolio/abc-store',
   },
   {
-    imgSrc: '/images/portfolio3.png',
+    imgSrc: 'https://iili.io/dhvnRA7.webp',
     title: 'Social Media Campaign for 123 Company',
     description: 'Strategic digital marketing campaign that increased brand awareness and engagement across all social channels.',
     link: '/portfolio/123-company',
