@@ -14,7 +14,7 @@ const AboutUs = () => {
       position: "CEO & Founder",
       fb: "/fb/asad",
       twitter: "/twitter/asad",
-      instagram: "",
+      instagram: "/instagram/asad",
     },
     {
       imgSrc: "https://iili.io/dh6Tdfp.jpg",
@@ -59,8 +59,8 @@ const AboutUs = () => {
       {/* Company Overview Section */}
       <section className="py-16 bg-gray-100 text-gray-800">
         <div className="container mx-auto flex flex-col lg:flex-row gap-10 p-5">
-          <div className='md:w-[50%] relative'>
-            <Image src='https://iili.io/dhrIA9s.jpg' layout='fill' objectFit='cover' objectPosition='top' className='rounded-md shadow-lg shadow-blue-gray-500'/>
+          <div className='md:w-[50%] relative border'>
+            <Image src='https://iili.io/dhrIA9s.jpg' alt='about-us' width={400} height={350} priority={true}  className='rounded-md shadow-lg shadow-blue-gray-500 w-full'/>
           </div>
         
           <div className='md:w-[50%]'>

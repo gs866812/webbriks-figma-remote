@@ -7,7 +7,7 @@ const PortfolioCard = ({ imgSrc, title, description, link }) => {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col justify-between" data-aos='flip-left' data-aos-easing="ease-out-cubic" data-aos-duration="2000">
       <div className="relative w-full h-[250px]">
-        <Image src={imgSrc} alt={title} layout='fill' objectFit='cover'objectPosition="top"/>
+        <Image src={imgSrc} alt={title} layout='fill' objectFit='cover' objectPosition='top'/>
       </div>
       <div className="p-5 flex-grow flex flex-col justify-between">
         <div>
