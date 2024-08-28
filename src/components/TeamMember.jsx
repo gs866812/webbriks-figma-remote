@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   Card,
   CardHeader,
@@ -13,8 +13,17 @@ import { AiFillTwitterCircle } from "react-icons/ai";
 import Link from "next/link";
 
 const TeamMember = ({ imgSrc, title, position, fb, twitter, instagram }) => {
+    const [social, setSocial] = useState(false);
+
+    const handleMouseEnter  = () => {
+        setSocial(!false);
+    };
+    const handleMouseLeave = () => {
+        setSocial(false); // Hide the social icons when the mouse leaves
+    };
+
   return (
-    <Card className='hover:shadow hover:shadow-blue-gray-400'>
+    <Card className='hover:shadow hover:shadow-blue-gray-400 relative' onMouseEnter={handleMouseEnter } onMouseLeave={handleMouseLeave}>
       <CardHeader floated={false} className="">
         <img
           src={imgSrc}
@@ -29,7 +38,7 @@ const TeamMember = ({ imgSrc, title, position, fb, twitter, instagram }) => {
           {position}
         </Typography>
       </CardBody>
-      <CardFooter className="flex justify-center gap-2 pt-2">
+      <CardFooter className={`${social ? 'flex flex-col gap-1 absolute top-[20%] left-3 ease-in-out transform transition-opacity duration-1000 opacity-100 translate-y-0 bg-social p-2 rounded-md' : 'opacity-0 translate-y-4 absolute'}`}>
         <Tooltip content="Facebook">
             <Link href={fb}><FaFacebook className='text-3xl hover:text-orange-400' /></Link>
         </Tooltip>

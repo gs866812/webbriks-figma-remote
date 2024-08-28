@@ -241,7 +241,7 @@ export function NavigationbarWithDropdownMultilevelMenu() {
     <div className="bg-gray-800">
       <Navbar className="shadow-none w-full rounded-none border-none mx-auto bg-transparent ">
         <div className="flex items-center justify-between">
-          <span className='text-3xl font-bold'>WEB-<span className='text-orange-400'>BRIKS</span></span>
+          <Link href='/' className='text-3xl font-bold'>WEB-<span className='text-orange-400'>BRIKS</span></Link>
           <div className="hidden lg:block ">
             <NavList />
           </div>

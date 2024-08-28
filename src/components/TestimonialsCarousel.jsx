@@ -2,7 +2,7 @@
 import React from "react";
 import Slider from "react-slick";
 import { CgShapeZigzag } from "react-icons/cg";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { FaStar } from "react-icons/fa";
 
 const testimonials = [
