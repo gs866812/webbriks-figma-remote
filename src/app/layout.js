@@ -3,6 +3,7 @@ import 'aos/dist/aos.css'; // Import the CSS
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
 import { NavigationbarWithDropdownMultilevelMenu } from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
