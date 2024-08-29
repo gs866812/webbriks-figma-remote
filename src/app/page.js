@@ -5,6 +5,7 @@ import PortfolioSection from "@/components/PortfolioSection";
 import ServicesSection from "@/components/ServicesSection";
 import SliderOne from "@/components/SliderOne";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import WhyChoose from "@/components/WhyChoose";
 import aos from "aos";
 import React, { useEffect } from "react";
 
@@ -33,6 +34,9 @@ const Home = () => {
       </section>
       <section data-aos='fade-up'>
         <CTASection />
+      </section>
+      <section data-aos='fade-up'>
+      <WhyChoose/>
       </section>
       <section data-aos='fade-up'>
         <TestimonialsCarousel />

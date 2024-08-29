@@ -4,7 +4,6 @@ import {
   Navbar,
   Collapse,
   Typography,
-  Button,
   IconButton,
   List,
   ListItem,
@@ -17,7 +16,6 @@ import {
   ChevronDownIcon,
   Bars3Icon,
   XMarkIcon,
-  ChevronUpIcon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -90,7 +88,7 @@ function NavListMenu() {
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((cur) => !cur)}
             >
-              Services
+              <Link href='/services'>Services</Link>
               <ChevronDownIcon
                 strokeWidth={2.5}
                 className={`hidden h-3 w-3 transition-transform lg:block ${

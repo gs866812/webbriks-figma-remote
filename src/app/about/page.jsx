@@ -52,7 +52,8 @@ const AboutUs = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section data-aos='fade-up'
+      <section
+        data-aos="fade-up"
         style={{ backgroundImage: "url('https://iili.io/dhd9CUg.jpg')" }}
         className="bg-no-repeat bg-center bg-cover"
       >
@@ -68,7 +69,7 @@ const AboutUs = () => {
       </section>
 
       {/* Company Overview Section */}
-      <section className="py-16 bg-gray-100 text-gray-800" data-aos='fade-up'>
+      <section className="py-16 bg-gray-100 text-gray-800" data-aos="fade-up">
         <div className="container mx-auto flex flex-col lg:flex-row gap-10 p-5">
           <div className="md:w-[50%] relative border">
             <Image
@@ -102,7 +103,7 @@ const AboutUs = () => {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-16 text-gray-800" data-aos='fade-up'>
+      <section className="py-16 text-gray-800" data-aos="fade-up">
         <div className="container mx-auto px-5 lg:px-20 grid grid-cols-1 md:grid-cols-2 gap-10">
           <div>
             <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
@@ -126,7 +127,8 @@ const AboutUs = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section data-aos='fade-up'
+      <section
+        data-aos="fade-up"
         className=" text-center text-gray-100 bg-no-repeat bg-cover bg-center"
         style={{ backgroundImage: "url('https://iili.io/dhdK4wu.jpg')" }}
       >
@@ -147,7 +149,7 @@ const AboutUs = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 bg-gray-100 text-gray-800" data-aos='fade-up'>
+      <section className="py-16 bg-gray-100 text-gray-800" data-aos="fade-up">
         <div className="container mx-auto px-5">
           <h2 className="text-3xl font-bold mb-8 text-center">Meet Our Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
