@@ -32,14 +32,15 @@ const Home = () => {
       <section data-aos='fade-up'>
         <PortfolioSection />
       </section>
-      <section data-aos='fade-up'>
-        <CTASection />
-      </section>
+      
       <section data-aos='fade-up'>
       <WhyChoose/>
       </section>
       <section data-aos='fade-up'>
         <TestimonialsCarousel />
+      </section>
+      <section data-aos='fade-up'>
+        <CTASection />
       </section>
     </div>
   );

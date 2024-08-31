@@ -6,7 +6,7 @@
     background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.842), rgba(66, 66, 66, 0.685));
 }
 .bg-cta{
-    background-image: linear-gradient(to bottom right, #022d5df5, #080808ef);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 .bg-cta-about{
     background-color: #fafafaec;

@@ -126,28 +126,6 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section
-        data-aos="fade-up"
-        className=" text-center text-gray-100 bg-no-repeat bg-cover bg-center"
-        style={{ backgroundImage: "url('https://iili.io/dhdK4wu.jpg')" }}
-      >
-        <div className="py-16 bg-cta">
-          <div className="container mx-auto px-5 lg:px-20">
-            <h2 className="text-3xl font-bold mb-4">Ready to Work With Us?</h2>
-            <p className="text-xl mb-8">
-              Contact us today to discuss your project and see how we can help
-              you achieve your goals.
-            </p>
-            <Link href="/contact">
-              <span className="inline-block bg-orange-500 text-gray-900 px-6 py-3 rounded-full hover:bg-orange-600 transition-colors cursor-pointer">
-                Get in Touch
-              </span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Team Section */}
       <section className="py-16 bg-gray-100 text-gray-800" data-aos="fade-up">
         <div className="container mx-auto px-5">
@@ -196,6 +174,28 @@ const AboutUs = () => {
                 instagram={service.instagram}
               />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section
+        data-aos="fade-up"
+        className=" text-center text-gray-100 bg-no-repeat bg-cover bg-center"
+        style={{ backgroundImage: "url('https://iili.io/dhdK4wu.jpg')" }}
+      >
+        <div className="py-16 bg-cta">
+          <div className="container mx-auto px-5 lg:px-20">
+            <h2 className="text-3xl font-bold mb-4">Ready to Work With Us?</h2>
+            <p className="text-xl mb-8">
+              Contact us today to discuss your project and see how we can help
+              you achieve your goals.
+            </p>
+            <Link href="/contact">
+              <span className="inline-block bg-orange-500 text-gray-900 px-6 py-3 rounded-full hover:bg-orange-600 transition-colors cursor-pointer">
+                Get in Touch
+              </span>
+            </Link>
           </div>
         </div>
       </section>
