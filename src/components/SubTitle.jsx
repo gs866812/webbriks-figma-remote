@@ -3,18 +3,26 @@ import React from 'react';
 import TypewriterComponent from 'typewriter-effect';
 
 const SubTitle = () => {
-    return (
-        <span className="text-white">
-        <TypewriterComponent
-          options={{
-            strings: [`<span style="background-color:#0000008a; padding: 10px; border-radius: 5px"> <span>We provide top-notch </span><span style="color: #FFA500;">design</span><span>, </span><span style="color: #FF4500;">development</span><span>, and </span><span style="color: #1E90FF;">digital marketing</span><span> services to help your business thrive.</span></span>`],
-            autoStart: true,
-            loop: true,
-            deleteSpeed: 'natural',
-          }}
-        />
-      </span>
-    );
+  return (
+    <div
+      className="bg-black bg-opacity-60 p-4 md:p-6 rounded-md inline-block"
+      style={{
+        border: "2px solid #FFA500",
+        backdropFilter: "blur(5px)",
+      }}
+    >
+      <TypewriterComponent
+        options={{
+          strings: [
+            `<span>We provide <span style="color: #FFA500;">top-notch design</span>, <span style="color: #FF4500;">development</span>, and <span style="color: #1E90FF;">digital marketing</span> services to help your business thrive.</span>`,
+          ],
+          autoStart: true,
+          loop: true,
+          deleteSpeed: "natural",
+        }}
+      />
+    </div>
+  );
 };
 
 export default SubTitle;

@@ -5,6 +5,7 @@ import aos from "aos";
 import SixServiceCard from "@/components/SixServiceCard";
 // import Image from "next/image";
 import Image from "next/legacy/image";
+import OurProcess from "@/components/OurProcess";
 
 const Services = () => {
   useEffect(() => {
@@ -93,66 +94,7 @@ const Services = () => {
       </section>
 
       {/* process */}
-      <section className="py-16 bg-white text-gray-800" data-aos="fade-up">
-        <div className="container mx-auto px-5">
-          <h2 className="text-3xl font-bold mb-8 lg:mb-12 text-center">
-            Our Process
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16">
-            <div className="text-center">
-              <div className="mb-4 relative h-[110px]">
-                <Image
-                  src="https://iili.io/dwJRHFI.png"
-                  width={100}
-                  height={100}
-                  priority="true"
-                  alt="Step 1"
-                  className="mx-auto w-16 h-16"
-                />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Consultation</h3>
-              <p>
-                We start by understanding your needs and goals to tailor our
-                services accordingly.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="mb-4 relative h-[110px]">
-                <Image
-                  src="https://iili.io/dwJRJat.png"
-                  width={100}
-                  height={100}
-                  priority="true"
-                  alt="Step 2"
-                  className="mx-auto w-16 h-16"
-                />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Planning</h3>
-              <p>
-                We create a detailed plan and timeline to ensure the project
-                stays on track.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="mb-4 relative h-[110px]">
-                <Image
-                  src="https://iili.io/dwJRd8X.png"
-                  width={100}
-                  height={100}
-                  priority="true"
-                  alt="Step 3"
-                  className="mx-auto w-16 h-16"
-                />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Execution</h3>
-              <p>
-                Our team executes the plan with precision and keeps you updated
-                throughout.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <OurProcess/>
 
       {/* case studies */}
 

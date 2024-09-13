@@ -1,6 +1,7 @@
 "use client";
 import AboutUs from "@/components/AboutUs";
 import CTASection from "@/components/CTASection";
+import OurProcess from "@/components/OurProcess";
 import PortfolioSection from "@/components/PortfolioSection";
 import ServicesSection from "@/components/ServicesSection";
 import SliderOne from "@/components/SliderOne";
@@ -25,6 +26,9 @@ const Home = () => {
       </section>
       <section data-aos='fade-up'>
         <ServicesSection />
+      </section>
+      <section data-aos='fade-up'>
+        <OurProcess/>
       </section>
       <section data-aos='fade-up'>
         <AboutUs />

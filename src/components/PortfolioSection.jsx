@@ -25,8 +25,25 @@ const portfolioItems = [
 const PortfolioSection = () => {
   return (
     <section className="bg-gray-100 py-16 md:py-20 lg:py-24 px-5 md:px-10 lg:px-20">
-      <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-5">Featured Work</h2>
+      <div className="container mx-auto flex flex-col items-center">
+        <h2 className="text-4xl font-bold text-center text-gray-800">Featured Work</h2>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="-25 0 200 20"
+          fill="none"
+          className="w-full max-w-[300px] md:max-w-[350px] mb-10"
+        >
+          <path
+            d="M10 10c20 5 40 2 60 0s40-10 60-5"
+            stroke="#FFA500"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            style={{
+              filter: "drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3))",
+            }}
+          />
+        </svg>
         <p className="text-lg md:text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
           A showcase of our recent projects across various industries, demonstrating our expertise and commitment to quality.
         </p>

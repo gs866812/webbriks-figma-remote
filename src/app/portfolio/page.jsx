@@ -15,19 +15,19 @@ const Portfolio = () => {
 
   const projects = [
     {
-      imgSrc: "https://iili.io/dhkgXqB.webp",
+      imgSrc: "https://iili.io/dNzwskl.jpg",
       title: "eCommerce Photo Editing",
       description: "Enhanced product images for better sales.",
       link: "/portfolio/ecommerce-photo-editing",
     },
     {
-      imgSrc: "https://iili.io/dhkgXqB.webp",
+      imgSrc: "https://iili.io/dNzwZIS.jpg",
       title: "Drop Shadow Making",
       description: "Realistic drop shadows for fashion products.",
       link: "/portfolio/drop-shadow-making",
     },
     {
-      imgSrc: "https://iili.io/dhkgXqB.webp",
+      imgSrc: "https://iili.io/dNzwZIS.jpg",
       title: "E-commerce Website",
       description: "Custom website design and development.",
       link: "/portfolio/abc-store-website",
@@ -38,7 +38,7 @@ const Portfolio = () => {
   return (
     <div>
       {/* Hero Section */}
-      {/* <section
+      <section
         data-aos="fade-up"
         style={{ backgroundImage: "url('https://iili.io/dhd9CUg.jpg')" }}
         className="bg-no-repeat bg-center bg-cover"
@@ -47,16 +47,16 @@ const Portfolio = () => {
           <div className="container mx-auto px-5">
             <h1 className="text-4xl font-bold mb-4">Our Portfolio</h1>
             <p className="text-xl mb-6">
-            Showcasing our Expertise and Creative Solutions
+              Showcasing our Expertise and Creative Solutions
             </p>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Project Categories Section */}
       <section className="py-10 bg-gray-100 text-center">
         <h2 className="text-3xl font-bold mb-8">Our Services</h2>
-        <div className="flex justify-center space-x-4">
+        <div className="flex flex-col md:flex-row justify-center gap-5">
           <Link href="#graphics-design">
             <span className="text-lg font-semibold cursor-pointer">
               Graphics Design
@@ -98,7 +98,10 @@ const Portfolio = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {projects.map((project, index) => (
-              <div key={index} className="relative group h-[250px]">
+              <div
+                key={index}
+                className="relative group h-[250px] border rounded-md shadow-lg"
+              >
                 <Image
                   src={project.imgSrc}
                   alt={project.title}

@@ -2,29 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg-color{
-    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.842), rgba(66, 66, 66, 0.685));
+.bg-color {
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.842),
+    rgba(66, 66, 66, 0.685)
+  );
 }
-.bg-cta{
-    background-color: rgba(0, 0, 0, 0.5);
+.bg-cta {
+  background-color: rgba(0, 0, 0, 0.5);
 }
-.bg-cta-about{
-    background-color: #fafafaec;
+.bg-cta-about {
+  background-color: #fafafaec;
 }
-.bg-about{
-    background-image: linear-gradient(to bottom right, #f5f1f1, #f8f8f8ce);
+.bg-about {
+  background-image: linear-gradient(to bottom right, #f5f1f1, #f8f8f8ce);
 }
-.bg-about-top{
-    background-color: #000000cf;
+.bg-about-top {
+  background-color: #000000cf;
 }
 
-.bg-subtitle{
-    background-color: #0000008a;
+.bg-subtitle {
+  background-color: #0000008a;
 }
-.color-shape{
-    color: rgba(217, 212, 212, 0.37);
+.color-shape {
+  color: rgba(217, 212, 212, 0.37);
 }
-.bg-social{
-    background-color: rgba(255, 255, 255, 0.483);
-
+.bg-social {
+  background-color: rgba(255, 255, 255, 0.483);
+}
+.process {
+  background: linear-gradient(180deg, white 0%, #e0f0ff 100%);
 }
