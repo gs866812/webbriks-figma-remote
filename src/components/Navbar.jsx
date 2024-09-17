@@ -76,7 +76,8 @@ function NavListMenu() {
         placement="bottom"
         allowHover={true}
       >
-        <MenuHandler>
+        {/* Dropdown */}
+        {/* <MenuHandler>
           <Typography
             as="div"
             variant="medium"
@@ -103,7 +104,7 @@ function NavListMenu() {
               />
             </ListItem>
           </Typography>
-        </MenuHandler>
+        </MenuHandler> */}
         <MenuList className="hidden rounded-xl lg:block mt-3">
           {/* Nested menu */}
           {/* <Menu
@@ -198,7 +199,16 @@ function NavList() {
       >
         <ListItem className={`flex items-center gap-2 py-2 pr-4 ${currentPath === '/about' ? 'bg-white text-black' : ''}`}>About</ListItem>
       </Typography>
-      <NavListMenu />
+      {/* <NavListMenu /> */}
+      <Typography
+        as="a"
+        href="/services"
+        variant="medium"
+        className="font-medium"
+        color="white"
+      >
+        <ListItem className={`flex items-center gap-2 py-2 pr-4 ${currentPath === '/services' ? 'bg-white text-black' : ''}`}>Services</ListItem>
+      </Typography>
       <Typography
         as="a"
         href="/portfolio"
@@ -239,7 +249,7 @@ export function NavigationbarWithDropdownMultilevelMenu() {
     <div className="bg-gray-800">
       <Navbar className="shadow-none w-full rounded-none border-none mx-auto bg-transparent ">
         <div className="flex items-center justify-between">
-          <Link href='/' className='text-3xl font-bold'>WEB-<span className='text-orange-400'>BRIKS</span></Link>
+          <Link href='/' className='text-3xl font-bold'>WEB<span className='text-orange-400'>BRIKS</span></Link>
           <div className="hidden lg:block ">
             <NavList />
           </div>

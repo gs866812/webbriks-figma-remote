@@ -27,6 +27,7 @@ const Home = () => {
       <section data-aos='fade-up'>
         <ServicesSection />
       </section>
+      <hr/>
       <section data-aos='fade-up'>
         <OurProcess/>
       </section>

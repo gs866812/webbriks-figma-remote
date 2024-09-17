@@ -10,6 +10,7 @@ import {
   FaTwitter,
   FaLinkedin,
 } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const Contact = () => {
 
@@ -29,16 +30,18 @@ const Contact = () => {
         },
         body: JSON.stringify(data),
       });
-
+  
       if (response.ok) {
-        console.log('Email sent successfully');
+        reset();
+        toast.success('Email sent successfully');
       } else {
-        console.error('Failed to send email');
+        toast.error('Failed to send email');
       }
     } catch (error) {
-      console.error('Error:', error);
+      toast.error('Error: ' + error.message); // Display error message
     }
-};
+  };
+  
 
 
   

@@ -77,32 +77,90 @@ const Services = () => {
 
       {/* Services Overview Section */}
       <section className="py-16 bg-gray-100 text-gray-800" data-aos="fade-up">
-        <div className="container mx-auto px-5">
-          <h2 className="text-3xl font-bold mb-8 text-center">What We Do</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="container mx-auto px-5 flex flex-col items-center">
+          <h2 className="text-3xl font-bold text-center">What We Do</h2>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="-30 0 200 20"
+            fill="none"
+            className="w-full max-w-[250px] md:max-w-[250px] mb-10"
+          >
+            <path
+              d="M10 10c20 5 40 2 60 0s40-10 60-5"
+              stroke="#FFA500"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              style={{
+                filter: "drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3))",
+              }}
+            />
+          </svg>
+          <div className="grid grid-cols-1 gap-12 w-full">
             {services.map((service, index) => (
-              <SixServiceCard
+              <div
                 key={index}
-                imgSrc={service.imgSrc}
-                title={service.title}
-                description={service.description}
-                link={service.link}
-              />
+                className={`flex flex-col md:flex-row items-center gap-8 p-8 rounded-lg shadow-lg hover:shadow-xl bg-white ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+              >
+                {/* Image Section */}
+                <div className={`w-full md:w-1/2 h-auto lg:flex justify-center`}>
+                  <Image
+                    src={service.imgSrc}
+                    alt={service.title}
+                    width={200}
+                    height={200}
+                    className={`rounded-lg shadow-lg w-full object-cover `}
+                  />
+                </div>
+
+                {/* Content Section */}
+                <div className="w-full md:w-1/2 flex flex-col justify-center">
+                  <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                  <p className="text-lg mb-4 text-gray-600">
+                    {service.description}
+                  </p>
+                  <span>
+                  <a
+                    href={service.link}
+                    className="inline-block bg-orange-400 text-gray-900 px-6 py-3 rounded-md hover:bg-orange-500 transition-colors mt-5"
+                  >
+                    Learn More
+                  </a>
+                  </span>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* process */}
-      <OurProcess/>
+      <OurProcess />
 
       {/* case studies */}
 
       <section className="py-16 bg-gray-100 text-gray-800" data-aos="fade-up">
-        <div className="container mx-auto px-5">
-          <h2 className="text-3xl font-bold mb-8 text-center">Case Studies</h2>
+        <div className="container mx-auto px-5 flex flex-col items-center">
+          <h2 className="text-3xl font-bold text-center">Case Studies</h2>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="-30 0 200 20"
+            fill="none"
+            className="w-full max-w-[270px] md:max-w-[270px] mb-10"
+          >
+            <path
+              d="M10 10c20 5 40 2 60 0s40-10 60-5"
+              stroke="#FFA500"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              style={{
+                filter: "drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3))",
+              }}
+            />
+          </svg>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="border rounded-lg shadow-sm">
+            <div className="border rounded-3xl shadow-sm bg-white">
               <div className="p-5 relative h-[200px]">
                 <Image
                   src="https://iili.io/dNzwskl.jpg"
@@ -134,7 +192,7 @@ const Services = () => {
                 </Link>
               </div>
             </div>
-            <div className="border rounded-lg shadow-sm">
+            <div className="border rounded-3xl shadow-sm bg-white">
               <div className="p-5 relative h-[200px]">
                 <Image
                   src="https://iili.io/dNzwZIS.jpg"
@@ -166,7 +224,7 @@ const Services = () => {
                 </Link>
               </div>
             </div>
-            <div className="border rounded-lg shadow-sm">
+            <div className="border rounded-3xl shadow-sm bg-white">
               <div className="p-5 relative h-[200px]">
                 <Image
                   src="https://iili.io/dhkgXqB.webp"

@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 
 
 export async function POST(req) {
-  const { firstName, email, message } = await req.json();
+  const { firstName, lastName, email, message } = await req.json();
 
   const transporter = nodemailer.createTransport({
     host: 'gsarwar.com',
@@ -17,7 +17,7 @@ export async function POST(req) {
 
   try {
     await transporter.sendMail({
-      from: `"${firstName}" <${email}>`,
+      from: `"${firstName} ${lastName}" <${email}>`,
       to: 'hello@gsarwar.com', // Your email
       subject: 'New Contact Form Message',
       text: message,

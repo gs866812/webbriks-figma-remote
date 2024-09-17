@@ -2,10 +2,12 @@ import "./globals.css";
 import 'aos/dist/aos.css'; // Import the CSS
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 import { NavigationbarWithDropdownMultilevelMenu } from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ToastContainer } from "react-toastify";
 
 
 
@@ -22,7 +24,9 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" type="image/png" href="https://iili.io/dj5tSSf.png"/>
       </head>
+      
       <body>
+      <ToastContainer position="bottom-right"/>
         <header className="lg:sticky lg:-top-2 z-50 shadow-md">
           <NavigationbarWithDropdownMultilevelMenu />
         </header>

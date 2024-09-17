@@ -4,8 +4,25 @@ import React from "react";
 const WhyChoose = () => {
   return (
     <section className="py-16 text-gray-800">
-      <div className="container mx-auto px-5">
-        <h2 className="text-3xl font-bold mb-8 text-center">Why Choose Us?</h2>
+      <div className="container mx-auto px-5 flex flex-col items-center">
+        <h2 className="text-3xl font-bold text-center">Why Choose Us?</h2>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="-25 0 200 20"
+          fill="none"
+          className="w-full max-w-[325px] md:max-w-[325px] mb-10"
+        >
+          <path
+            d="M10 10c20 5 40 2 60 0s40-10 60-5"
+            stroke="#FFA500"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            style={{
+              filter: "drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3))",
+            }}
+          />
+        </svg>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="text-center">
             <div className="m-4 relative h-[150px] flex items-center justify-center">

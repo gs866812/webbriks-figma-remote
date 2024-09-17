@@ -23,11 +23,7 @@ const Footer = () => {
                   Home
                 </Link>
               </li>
-              <li className="mb-2">
-                <Link href="/about" className="hover:text-white transition-colors">
-                  About Us
-                </Link>
-              </li>
+
               <li className="mb-2">
                 <Link href="/services" className="hover:text-white transition-colors">
                   Services
@@ -39,8 +35,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="mb-2">
-                <Link href="/contact" className="hover:text-white transition-colors">
-                  Contact
+                <Link href="/terms-and-conditions" className="hover:text-white transition-colors">
+                  Term & Condition
                 </Link>
               </li>
             </ul>
@@ -49,9 +45,9 @@ const Footer = () => {
           {/* Contact Section */}
           <div>
             <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
-            <p className="text-gray-400 mb-2">Email: contact@webbriks.com</p>
-            <p className="text-gray-400 mb-2">Phone: +123 456 7890</p>
-            <p className="text-gray-400">Address: Zigzag road, Masterpara, Gaibandha, BD</p>
+            <p className="text-gray-400 mb-2">Email: info@webbriks.com</p>
+            <p className="text-gray-400 mb-2">Phone: +1 718 577 1232</p>
+            <p className="text-gray-400">Address: 1209, Mountain Road PL NE, STE R, ALBUQUERQUE, NM, 87110</p>
           </div>
 
           {/* Social Media Section */}
