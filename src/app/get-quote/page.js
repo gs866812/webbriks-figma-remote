@@ -1,11 +1,11 @@
 "use client";
-import Image from "next/legacy/image";
-import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import Image from "next/legacy/image";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 const GetQuote = () => {
-  const router = useRouter(); // Initialize the useRouter hook
+  const router = useRouter();
   const [formData, setFormData] = useState({
     services: {
       graphicsDesign: false,
@@ -15,7 +15,7 @@ const GetQuote = () => {
       videoEditing: false,
       digitalMarketing: false,
     },
-    file: null,
+    files: [],
     driveLink: "",
     fullName: "",
     email: "",
@@ -25,26 +25,47 @@ const GetQuote = () => {
   });
 
   const handleCheckboxChange = (service) => {
-    setFormData({
-      ...formData,
+    setFormData((prevFormData) => ({
+      ...prevFormData,
       services: {
-        ...formData.services,
-        [service]: !formData.services[service],
+        ...prevFormData.services,
+        [service]: !prevFormData.services[service],
       },
-    });
+    }));
   };
 
   const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file && file.size <= 10485760 && /image\/(png|jpeg|gif)/.test(file.type)) {
-      setFormData({ ...formData, file });
+    const newFiles = Array.from(e.target.files);
+    const allFiles = [...formData.files, ...newFiles];
+    const validFiles = allFiles.filter(
+      (file) =>
+        (file.size <= 10485760 && /image\/(png|jpeg|gif)/.test(file.type)) ||
+        file.type === "application/zip"
+    );
+
+    if (validFiles.length > 5) {
+      toast.error("You can upload up to 5 files only.");
     } else {
-      toast.error("File must be a PNG, JPG, GIF and up to 10MB.");
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        files: validFiles.slice(0, 5), // Limit to 5 files
+      }));
     }
   };
 
+  const handleFileRemove = (index) => {
+    setFormData((prevFormData) => {
+      const updatedFiles = [...prevFormData.files];
+      updatedFiles.splice(index, 1);
+      return { ...prevFormData, files: updatedFiles };
+    });
+  };
+
   const handleInputChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [e.target.name]: e.target.value,
+    }));
   };
 
   const validateForm = () => {
@@ -61,8 +82,7 @@ const GetQuote = () => {
       return;
     }
 
-    // Prepare FormData to send both file and other fields
-    const formDataToSend = new FormData(); // Use a different variable name to avoid confusion
+    const formDataToSend = new FormData();
     formDataToSend.append("fullName", formData.fullName);
     formDataToSend.append("email", formData.email);
     formDataToSend.append("phone", formData.phone);
@@ -70,26 +90,23 @@ const GetQuote = () => {
     formDataToSend.append("message", formData.message);
     formDataToSend.append("driveLink", formData.driveLink);
 
-    // Append selected services
     Object.keys(formData.services).forEach((service) => {
       if (formData.services[service]) {
         formDataToSend.append("services[]", service);
       }
     });
 
-    // Append file (if exists)
-    if (formData.file) {
-      formDataToSend.append("file", formData.file);
-    }
+    formData.files.forEach((file) => {
+      formDataToSend.append("files", file);
+    });
 
     try {
       const response = await fetch("/api/getQuoteMail", {
         method: "POST",
-        body: formDataToSend, // Using FormData directly here
+        body: formDataToSend,
       });
 
       if (response.ok) {
-        // Reset the form and show success message
         setFormData({
           services: {
             graphicsDesign: false,
@@ -99,7 +116,7 @@ const GetQuote = () => {
             videoEditing: false,
             digitalMarketing: false,
           },
-          file: null,
+          files: [],
           driveLink: "",
           fullName: "",
           email: "",
@@ -108,12 +125,12 @@ const GetQuote = () => {
           message: "",
         });
         toast.success("Thank you. Your info has been submitted.");
-        router.push("/"); // Redirect to Thank You page
+        router.push("/");
       } else {
         toast.error("Failed to send email.");
       }
     } catch (error) {
-      toast.error("Error: " + error.message); // Display error message
+      toast.error("Error: " + error.message);
     }
   };
 
@@ -124,53 +141,99 @@ const GetQuote = () => {
         {/* Services Section */}
         <h2 className="text-2xl font-semibold mb-4">Services You Need</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-          {/* Checkboxes for Services */}
-          {["graphicsDesign", "photoEditing", "webDevelopment", "virtualAssistant", "videoEditing", "digitalMarketing"].map((service) => (
-            <label key={service} className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-                checked={formData.services[service]}
-                onChange={() => handleCheckboxChange(service)}
-              />
-              {service.replace(/([A-Z])/g, " $1")} {/* Capitalize Service Names */}
-            </label>
-          ))}
+          <label className="flex items-center">
+            <input
+              type="checkbox"
+              className="mr-2"
+              checked={formData.services.graphicsDesign}
+              onChange={() => handleCheckboxChange("graphicsDesign")}
+            />
+            Graphics Design
+          </label>
+          <label className="flex items-center">
+            <input
+              type="checkbox"
+              className="mr-2"
+              checked={formData.services.photoEditing}
+              onChange={() => handleCheckboxChange("photoEditing")}
+            />
+            Photo Editing
+          </label>
+          <label className="flex items-center">
+            <input
+              type="checkbox"
+              className="mr-2"
+              checked={formData.services.webDevelopment}
+              onChange={() => handleCheckboxChange("webDevelopment")}
+            />
+            Web Development
+          </label>
+          <label className="flex items-center">
+            <input
+              type="checkbox"
+              className="mr-2"
+              checked={formData.services.virtualAssistant}
+              onChange={() => handleCheckboxChange("virtualAssistant")}
+            />
+            Virtual Assistance
+          </label>
+          <label className="flex items-center">
+            <input
+              type="checkbox"
+              className="mr-2"
+              checked={formData.services.videoEditing}
+              onChange={() => handleCheckboxChange("videoEditing")}
+            />
+            Video Editing
+          </label>
+          <label className="flex items-center">
+            <input
+              type="checkbox"
+              className="mr-2"
+              checked={formData.services.digitalMarketing}
+              onChange={() => handleCheckboxChange("digitalMarketing")}
+            />
+            Digital Marketing
+          </label>
         </div>
 
         {/* File Upload Section */}
         <h2 className="text-2xl font-semibold mb-4">Upload Files or Enter Drive Link</h2>
         <div className="mb-8">
           <div
-            className="w-full h-36 p-3 border-dotted border-2 border-gray-400 mb-4 flex justify-center items-center text-center"
-            style={{ position: "relative" }}
+            className="w-full h-36 p-3 border-dotted border-2 border-gray-400 mb-4 flex justify-center items-center text-center relative"
           >
             <input
               type="file"
-              name="file" // Name the file input correctly to match the server
-              accept=".png, .jpg, .jpeg, .gif"
+              multiple
+              accept=".png, .jpg, .jpeg, .gif, .zip"
               className="absolute inset-0 opacity-0 cursor-pointer"
               onChange={handleFileChange}
             />
             <div>
-              <Image
-                width={30}
-                height={30}
-                src="https://iili.io/d6qpdR2.png"
-                alt="upload icon"
-                className="mx-auto mb-2"
-              />
-              <p className="text-green-600 font-semibold">Upload a file</p>
+              <Image width={30} height={30} src="https://iili.io/d6qpdR2.png" alt="upload icon" />
+              <p className="text-green-600 font-semibold">Upload up to 5 files</p>
               <p className="text-gray-600 text-sm">or drag and drop</p>
-              <p className="text-gray-600 text-sm">PNG, JPG, GIF up to 10MB</p>
+              <p className="text-gray-600 text-sm">PNG, JPG, GIF, ZIP up to 10MB</p>
             </div>
           </div>
 
-          {/* Display file name if uploaded */}
-          {formData.file && (
-            <p className="text-sm text-gray-600 mt-2">
-              <strong>Uploaded file:</strong> {formData.file.name}
-            </p>
+          {/* Display uploaded files */}
+          {formData.files.length > 0 && (
+            <ul className="mb-4">
+              {formData.files.map((file, index) => (
+                <li key={index} className="flex items-center gap-1 mb-2">
+                  <span>{file.name}</span>
+                  <button
+                    type="button"
+                    className="text-red-600 hover:text-red-800 border px-1 rounded-sm bg-gray-200"
+                    onClick={() => handleFileRemove(index)}
+                  >
+                    x
+                  </button>
+                </li>
+              ))}
+            </ul>
           )}
         </div>
 

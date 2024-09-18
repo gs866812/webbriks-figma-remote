@@ -1,104 +1,72 @@
-import formidable from 'formidable';
 import nodemailer from 'nodemailer';
-import fs from 'fs';
-import path from 'path';
-import { NextResponse } from 'next/server';
 
-// Disable Next.js's default body parser to handle multipart/form-data
 export const config = {
   api: {
-    bodyParser: false,
+    bodyParser: false, // Disable Next.js's default body parser
   },
 };
 
 export async function POST(req) {
-  try {
-    // Initialize formidable to parse incoming form data
-    const form = new formidable.IncomingForm();
+  const formData = await req.formData();
+  const fullName = formData.get("fullName") || "N/A";
+  const email = formData.get("email") || "N/A";
+  const phone = formData.get("phone") || "N/A";
+  const website = formData.get("website") || "N/A";
+  const driveLink = formData.get("driveLink") || "N/A";
+  const message = formData.get("message") || "N/A";
+  const services = formData.getAll("services[]");
 
-    // Parse the incoming form-data (fields + file)
-    const { fields, files } = await new Promise((resolve, reject) => {
-      form.parse(req, (err, fields, files) => {
-        if (err) reject(err);
-        else {
-          console.log('Fields:', fields);  // Log fields to ensure correct parsing
-          console.log('Files:', files);    // Log files to ensure correct parsing
-          resolve({ fields, files });
-        }
-      });
-    });
+  // Extracting files from the form data
+  const files = formData.getAll("files");
 
-    // Extract the form fields and file
-    const { fullName, email, phone, website, message, driveLink } = fields;
-    const services = fields['services[]'];  // Multiple services selected
+  // Helper function to convert ReadableStream to Buffer
+  const streamToBuffer = async (stream) => {
+    const chunks = [];
+    for await (const chunk of stream) {
+      chunks.push(chunk);
+    }
+    return Buffer.concat(chunks);
+  };
 
-    // Setup the email transporter using nodemailer
-    const transporter = nodemailer.createTransport({
-      host: 'gsarwar.com',
-      port: 587,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+  // Convert file streams to Buffers
+  const fileAttachments = await Promise.all(
+    files.map(async (file, index) => ({
+      filename: file.name,
+      content: await streamToBuffer(file.stream()), // Convert stream to Buffer
+    }))
+  );
 
-    // Prepare the email message
-    const selectedServices = Array.isArray(services) ? services.join(', ') : services;
-    const mailMessage = `
+  // Setup Nodemailer transporter
+  const transporter = nodemailer.createTransport({
+    host: 'gsarwar.com',
+    port: 587,
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
+
+  const mailOptions = {
+    from: `"${fullName}" <${email}>`,
+    to: 'hello@gsarwar.com',
+    subject: 'New Quote Request',
+    text: `
       Full Name: ${fullName}
       Email: ${email}
       Phone: ${phone}
-      Website: ${website || 'N/A'}
-      Drive Link: ${driveLink || 'N/A'}
-      Services Requested: ${selectedServices}
+      Website: ${website}
+      Drive Link: ${driveLink}
+      Services: ${services.join(', ')}
       Message: ${message}
-    `;
+    `,
+    attachments: fileAttachments, // Attach files to the email
+  };
 
-    // Define the email options
-    const mailOptions = {
-      from: `"${fullName}" <${email}>`,
-      to: 'hello@gsarwar.com',
-      subject: 'New Quote Request',
-      text: mailMessage,
-    };
-
-    // If a file was uploaded, attach it to the email
-    if (files.file) {
-      console.log('File exists, attaching to email:', files.file);
-      const file = files.file;
-
-      // Read the file as a buffer to attach it
-      const fileBuffer = fs.readFileSync(path.resolve(file.filepath));
-
-      mailOptions.attachments = [
-        {
-          filename: file.originalFilename,
-          content: fileBuffer,
-        },
-      ];
-    } else {
-      console.log('No file uploaded');
-    }
-
-    // Send the email
-    try {
-      await transporter.sendMail(mailOptions);
-      console.log('Email sent successfully');
-    } catch (emailError) {
-      console.error('Error sending email:', emailError);
-      return new NextResponse(
-        JSON.stringify({ success: false, error: 'Failed to send email' }),
-        { status: 500 }
-      );
-    }
-
-    // Return success response
-    return new NextResponse(JSON.stringify({ success: true }), { status: 200 });
+  try {
+    await transporter.sendMail(mailOptions);
+    return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (error) {
-    console.error('Failed to process request:', error);
-    return new NextResponse(
-      JSON.stringify({ success: false, error: 'Failed to send email' }),
-      { status: 500 }
-    );
+    console.error('Failed to send email:', error);
+    return new Response(JSON.stringify({ success: false, error: 'Failed to send email' }), { status: 500 });
   }
 }
