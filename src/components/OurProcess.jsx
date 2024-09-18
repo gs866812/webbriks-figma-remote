@@ -14,7 +14,7 @@ const OurProcess = () => {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="-30 0 200 20"
             fill="none"
-            className="w-full max-w-[250px] md:max-w-[250] mb-10"
+            className="w-full max-w-[270px] md:max-w-[270] mb-10"
           >
             <path
               d="M10 10c20 5 40 2 60 0s40-10 60-5"

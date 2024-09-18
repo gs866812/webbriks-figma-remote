@@ -255,7 +255,7 @@ export function NavigationbarWithDropdownMultilevelMenu() {
           </div>
           <div className="hidden md:block">
             <Link
-              href="/contact"
+              href="/get-quote"
               className="bg-orange-400 text-gray-900 px-4 py-2 rounded hover:bg-orange-500 transition"
             >
               Get a Quote
@@ -277,7 +277,7 @@ export function NavigationbarWithDropdownMultilevelMenu() {
           <NavList />
           <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
           <Link
-              href="/contact"
+              href="/get-quote"
               className="bg-orange-400 text-gray-900 px-2 py-1 rounded hover:bg-orange-500 transition"
             >
               Get a Quote

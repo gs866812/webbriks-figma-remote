@@ -1,10 +1,8 @@
 "use client";
 import Image from "next/legacy/image";
 import { useRouter } from "next/navigation";
-
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-
 
 const GetQuote = () => {
   const router = useRouter(); // Initialize the useRouter hook
@@ -55,40 +53,68 @@ const GetQuote = () => {
     return isServiceSelected && fullName && email && phone;
   };
 
-  
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!validateForm()) {
       toast.warn("Please fill all required fields and select at least one service.");
       return;
     }
 
-    // Submit form data
-    // console.log(formData); // Simulating form data submission
-    toast.success("Thank you. Your info has been submitted.");
+    // Prepare FormData to send both file and other fields
+    const formDataToSend = new FormData(); // Use a different variable name to avoid confusion
+    formDataToSend.append("fullName", formData.fullName);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("phone", formData.phone);
+    formDataToSend.append("website", formData.website);
+    formDataToSend.append("message", formData.message);
+    formDataToSend.append("driveLink", formData.driveLink);
 
-    // Reset the form data
-    setFormData({
-      services: {
-        graphicsDesign: false,
-        photoEditing: false,
-        webDevelopment: false,
-        virtualAssistant: false,
-        videoEditing: false,
-        digitalMarketing: false,
-      },
-      file: null,
-      driveLink: "",
-      fullName: "",
-      email: "",
-      phone: "",
-      website: "",
-      message: "",
+    // Append selected services
+    Object.keys(formData.services).forEach((service) => {
+      if (formData.services[service]) {
+        formDataToSend.append("services[]", service);
+      }
     });
 
-    // Redirect to the thank you page or home page
-    router.push('/'); // Redirect to the Thank You page, replace with your actual route
+    // Append file (if exists)
+    if (formData.file) {
+      formDataToSend.append("file", formData.file);
+    }
+
+    try {
+      const response = await fetch("/api/getQuoteMail", {
+        method: "POST",
+        body: formDataToSend, // Using FormData directly here
+      });
+
+      if (response.ok) {
+        // Reset the form and show success message
+        setFormData({
+          services: {
+            graphicsDesign: false,
+            photoEditing: false,
+            webDevelopment: false,
+            virtualAssistant: false,
+            videoEditing: false,
+            digitalMarketing: false,
+          },
+          file: null,
+          driveLink: "",
+          fullName: "",
+          email: "",
+          phone: "",
+          website: "",
+          message: "",
+        });
+        toast.success("Thank you. Your info has been submitted.");
+        router.push("/"); // Redirect to Thank You page
+      } else {
+        toast.error("Failed to send email.");
+      }
+    } catch (error) {
+      toast.error("Error: " + error.message); // Display error message
+    }
   };
 
   return (
@@ -98,60 +124,18 @@ const GetQuote = () => {
         {/* Services Section */}
         <h2 className="text-2xl font-semibold mb-4">Services You Need</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-          <label className="flex items-center">
-            <input
-              type="checkbox"
-              className="mr-2"
-              checked={formData.services.graphicsDesign}
-              onChange={() => handleCheckboxChange("graphicsDesign")}
-            />
-            Graphics Design
-          </label>
-          <label className="flex items-center">
-            <input
-              type="checkbox"
-              className="mr-2"
-              checked={formData.services.photoEditing}
-              onChange={() => handleCheckboxChange("photoEditing")}
-            />
-            Photo Editing
-          </label>
-          <label className="flex items-center">
-            <input
-              type="checkbox"
-              className="mr-2"
-              checked={formData.services.webDevelopment}
-              onChange={() => handleCheckboxChange("webDevelopment")}
-            />
-            Web Development
-          </label>
-          <label className="flex items-center">
-            <input
-              type="checkbox"
-              className="mr-2"
-              checked={formData.services.virtualAssistant}
-              onChange={() => handleCheckboxChange("virtualAssistant")}
-            />
-            Virtual Assistance
-          </label>
-          <label className="flex items-center">
-            <input
-              type="checkbox"
-              className="mr-2"
-              checked={formData.services.videoEditing}
-              onChange={() => handleCheckboxChange("videoEditing")}
-            />
-            Video Editing
-          </label>
-          <label className="flex items-center">
-            <input
-              type="checkbox"
-              className="mr-2"
-              checked={formData.services.digitalMarketing}
-              onChange={() => handleCheckboxChange("digitalMarketing")}
-            />
-            Digital Marketing
-          </label>
+          {/* Checkboxes for Services */}
+          {["graphicsDesign", "photoEditing", "webDevelopment", "virtualAssistant", "videoEditing", "digitalMarketing"].map((service) => (
+            <label key={service} className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+                checked={formData.services[service]}
+                onChange={() => handleCheckboxChange(service)}
+              />
+              {service.replace(/([A-Z])/g, " $1")} {/* Capitalize Service Names */}
+            </label>
+          ))}
         </div>
 
         {/* File Upload Section */}
@@ -163,12 +147,19 @@ const GetQuote = () => {
           >
             <input
               type="file"
+              name="file" // Name the file input correctly to match the server
               accept=".png, .jpg, .jpeg, .gif"
               className="absolute inset-0 opacity-0 cursor-pointer"
               onChange={handleFileChange}
             />
             <div>
-              <Image width={30} height={30} src="https://iili.io/d6qpdR2.png" alt="upload icon" className="mx-auto mb-2" />
+              <Image
+                width={30}
+                height={30}
+                src="https://iili.io/d6qpdR2.png"
+                alt="upload icon"
+                className="mx-auto mb-2"
+              />
               <p className="text-green-600 font-semibold">Upload a file</p>
               <p className="text-gray-600 text-sm">or drag and drop</p>
               <p className="text-gray-600 text-sm">PNG, JPG, GIF up to 10MB</p>

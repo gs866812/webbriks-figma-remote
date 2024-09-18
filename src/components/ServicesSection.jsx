@@ -4,7 +4,6 @@ import ServiceCard from "./ServiceCard";
 
 const services = [
   {
-    // imgSrc: "https://iili.io/dX9sXig.png",
     imgSrc: "https://iili.io/dXJpctj.gif",
     title: "Graphics Design",
     description:
@@ -12,8 +11,6 @@ const services = [
     link: "/services/graphics-design",
   },
   {
-    // imgSrc: "https://iili.io/dX9sVx1.png",
-    // imgSrc: "https://iili.io/dXdurNa.gif",
     imgSrc: "https://iili.io/dXdEN3b.gif",
     title: "Photo Editing",
     description:
@@ -21,7 +18,6 @@ const services = [
     link: "/services/photo-editing",
   },
   {
-    // imgSrc: "https://iili.io/dX9skRp.png",
     imgSrc: "https://iili.io/dXduPov.gif",
     title: "Web Design & Development",
     description:
@@ -29,7 +25,6 @@ const services = [
     link: "/services/web-design-development",
   },
   {
-    // imgSrc: "https://iili.io/dX9sw0J.png",
     imgSrc: "https://iili.io/dXduiVR.gif",
     title: "Virtual Assistant",
     description:
@@ -37,7 +32,6 @@ const services = [
     link: "/services/virtual-assistant",
   },
   {
-    // imgSrc: "https://iili.io/dX9sGDP.png",
     imgSrc: "https://iili.io/dXduUHF.gif",
     title: "Video Editing",
     description:
@@ -45,7 +39,6 @@ const services = [
     link: "/services/video-editing",
   },
   {
-    // imgSrc: "https://iili.io/dX9sjfa.png",
     imgSrc: "https://iili.io/dXdu4DJ.gif",
     title: "Digital Marketing",
     description:

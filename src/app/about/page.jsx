@@ -83,7 +83,24 @@ const AboutUs = () => {
           </div>
 
           <div className="md:w-[50%]">
-            <h2 className="text-3xl font-bold mb-8">Who We Are</h2>
+            <h2 className="text-3xl font-bold">Who We Are</h2>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="8 0 200 20"
+              fill="none"
+              className="w-full max-w-[280px] md:max-w-[280px] mb-8"
+            >
+              <path
+                d="M10 10c20 5 40 2 60 0s40-10 60-5"
+                stroke="#FFA500"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                style={{
+                  filter: "drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3))",
+                }}
+              />
+            </svg>
             <p className="text-lg leading-relaxed mb-12">
               We are a team of passionate professionals dedicated to providing
               top-notch services in Graphics Design, Photo Editing, Web Design &
@@ -106,8 +123,25 @@ const AboutUs = () => {
       <section className="py-16 text-gray-800" data-aos="fade-up">
         <div className="container mx-auto px-5 lg:px-20 grid grid-cols-1 md:grid-cols-2 gap-10">
           <div>
-            <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-            <p className="text-lg leading-relaxed">
+            <h2 className="text-3xl font-bold">Our Mission</h2>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="5 0 200 20"
+              fill="none"
+              className="w-full max-w-[260px] md:max-w-[260px] mb-6"
+            >
+              <path
+                d="M10 10c20 5 40 2 60 0s40-10 60-5"
+                stroke="#FFA500"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                style={{
+                  filter: "drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3))",
+                }}
+              />
+            </svg>
+            <p className="text-lg leading-relaxed text-justify">
               Our mission is to provide exceptional services that help our
               clients achieve their goals. We strive to be a trusted partner in
               their success, offering innovative solutions and unparalleled
@@ -115,8 +149,25 @@ const AboutUs = () => {
             </p>
           </div>
           <div>
-            <h2 className="text-3xl font-bold mb-6">Our Vision</h2>
-            <p className="text-lg leading-relaxed">
+            <h2 className="text-3xl font-bold">Our Vision</h2>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="5 0 200 20"
+              fill="none"
+              className="w-full max-w-[240px] md:max-w-[240px] mb-6"
+            >
+              <path
+                d="M10 10c20 5 40 2 60 0s40-10 60-5"
+                stroke="#FFA500"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                style={{
+                  filter: "drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3))",
+                }}
+              />
+            </svg>
+            <p className="text-lg leading-relaxed text-justify">
               We envision a world where businesses can effortlessly transform
               their ideas into reality through creative and cutting-edge
               solutions. Our goal is to be at the forefront of this
@@ -128,8 +179,25 @@ const AboutUs = () => {
 
       {/* Team Section */}
       <section className="py-16 bg-gray-100 text-gray-800" data-aos="fade-up">
-        <div className="container mx-auto px-5">
-          <h2 className="text-3xl font-bold mb-8 text-center">Meet Our Team</h2>
+        <div className="container mx-auto px-5 flex flex-col items-center">
+          <h2 className="text-3xl font-bold text-center">Meet Our Team</h2>
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-30 0 200 20"
+              fill="none"
+              className="w-full max-w-[350px] md:max-w-[350px] mb-10"
+            >
+              <path
+                d="M10 10c20 5 40 2 60 0s40-10 60-5"
+                stroke="#FFA500"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                style={{
+                  filter: "drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3))",
+                }}
+              />
+            </svg>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {/* Team Member 1 */}
             {/* <div className="text-center">

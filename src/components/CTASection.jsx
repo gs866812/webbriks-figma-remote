@@ -15,8 +15,8 @@ const CTASection = () => {
         </p>
 
         <Link
-          href="/contact"
-          className="inline-block bg-orange-400 text-gray-900 text-lg font-semibold px-8 py-4 rounded-full hover:bg-gray-200 transition-colors"
+          href="/get-quote"
+          className="inline-block bg-orange-400 text-gray-900 text-lg font-semibold px-8 py-4 rounded-full hover:bg-orange-600 transition-colors"
         >
           Get Started Today
         </Link>

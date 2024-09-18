@@ -2,10 +2,11 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import aos from "aos";
-import SixServiceCard from "@/components/SixServiceCard";
+
 // import Image from "next/image";
 import Image from "next/legacy/image";
 import OurProcess from "@/components/OurProcess";
+import { FaAngleDoubleRight } from "react-icons/fa";
 
 const Services = () => {
   useEffect(() => {
@@ -20,28 +21,64 @@ const Services = () => {
     {
       imgSrc: "https://iili.io/dNommHQ.png", // Replace with appropriate images
       title: "Graphics Design",
-      description:
-        "Creative designs that elevate your brand's visual identity.",
+      description: `Do you need creative design solutions that are tailored to your brand? We ensure every design reflects your unique identity while captivating your target audience. We blend artistic flair with strategic thinking, delivering designs that look great, drive engagement, boost your brand's visibility, and communicate your message clearly and effectively.
+      
+      Our design service includes
+`,
       link: "/services/graphics-design",
+      listItems: [
+        "Logo Design",
+        "Banner design",
+        "Flyer design",
+        "Social media post design",
+        "Campaign creatives design",
+      ],
     },
     {
       imgSrc: "https://iili.io/dNomDUx.png", // Replace with appropriate images
       title: "Photo Editing",
-      description:
-        "Professional photo editing services to enhance your images.",
+      description: `We offer professional photo editing services that enhance and perfect your images to make them stand out. We work with e-commerce brands, photographers, and agencies, delivering fast, high-quality edits that meet your unique needs. Our team works smartly to elevate the visual impact of your photos. We aim to help you present a polished and professional image that captures your audience's attention.
+      
+      Our services include:
+`,
       link: "/services/photo-editing",
+      listItems: [
+        "Background removal",
+        "Color correction",
+        "Photo retouching",
+        "Adding realistic shadows",
+        "Product photo editing",
+      ],
     },
     {
       imgSrc: "https://iili.io/dNomsVe.png", // Replace with appropriate images
       title: "Web Design & Development",
-      description: "Responsive and modern websites tailored to your needs.",
+      description: `We specialize in crafting custom websites that blend aesthetic appeal with seamless functionality. Our web design and development services ensure a visually engaging, user-friendly, responsive, fast-loading, and CRO-optimized website. 
+      Our services include:
+`,
       link: "/services/web-design-and-development",
+      listItems: [
+        "E-commerce website",
+        "Business website",
+        "Newspaper website",
+        "Software development",
+        "Web applications development",
+      ],
     },
     {
       imgSrc: "https://iili.io/dNomZKb.png", // Replace with appropriate images
       title: "Virtual Assistant",
-      description: "Efficient virtual assistance to streamline your workflow.",
+      description: `We help you streamline your workload and focus on the core aspects of your business. Our skilled virtual assistants handle various tasks efficiently and reliably. With our assistance, you can free up time to focus on business growth.
+      Our services include:
+`,
       link: "/services/virtual-assistant",
+      listItems: [
+        "Administrative duties",
+        "Lead generation",
+        "Scheduling to customer support",
+        "Web research",
+        "Data entry, and more. ",
+      ],
     },
     {
       imgSrc: "https://iili.io/dNomLiu.png", // Replace with appropriate images
@@ -52,8 +89,17 @@ const Services = () => {
     {
       imgSrc: "https://iili.io/dNomtlj.png", // Replace with appropriate images
       title: "Digital Marketing",
-      description: "Strategies to boost your online presence and drive growth.",
+      description: `Do you want to grow your business with data-driven strategies? Without it, you will lose your money, effort, and business opportunities as well. We run marketing campaigns utilizing data appropriately that help to boost brand visibility, drive targeted traffic, and increase conversions. We help to grow your business by reaching the right audience with the right message. 
+      Our services include
+`,
       link: "/services/digital-marketing",
+      listItems: [
+        "SEO",
+        "Social Media Marketing",
+        "Email Marketing",
+        "Conversion rate optimization",
+        "PPC advertising",
+      ],
     },
   ];
 
@@ -83,7 +129,7 @@ const Services = () => {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="-30 0 200 20"
             fill="none"
-            className="w-full max-w-[250px] md:max-w-[250px] mb-10"
+            className="w-full max-w-[280px] md:max-w-[280px] mb-10"
           >
             <path
               d="M10 10c20 5 40 2 60 0s40-10 60-5"
@@ -100,15 +146,19 @@ const Services = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`flex flex-col md:flex-row items-center gap-8 p-8 rounded-lg shadow-lg hover:shadow-xl bg-white ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+                className={`flex flex-col md:flex-row items-center gap-8 p-8 rounded-lg shadow-lg hover:shadow-xl bg-white ${
+                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                }`}
               >
                 {/* Image Section */}
-                <div className={`w-full md:w-1/2 h-auto lg:flex justify-center`}>
+                <div
+                  className={`w-full md:w-1/2 h-auto lg:flex justify-center border rounded-md`}
+                >
                   <Image
                     src={service.imgSrc}
                     alt={service.title}
-                    width={200}
-                    height={200}
+                    width={400}
+                    height={400}
                     className={`rounded-lg shadow-lg w-full object-cover `}
                   />
                 </div>
@@ -116,16 +166,28 @@ const Services = () => {
                 {/* Content Section */}
                 <div className="w-full md:w-1/2 flex flex-col justify-center">
                   <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                  <p className="text-lg mb-4 text-gray-600">
+                  <p className="text-lg mb-4 text-gray-600 text-justify">
                     {service.description}
                   </p>
+
+                    {/* List Items */}
+                {service.listItems && (
+                  <ul className="list-inside mb-4 space-y-1">
+                    {service.listItems.map((item, i) => (
+                      <li key={i} className="text-gray-600 text-md flex gap-2 items-center">
+                        <FaAngleDoubleRight /> {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
                   <span>
-                  <a
-                    href={service.link}
-                    className="inline-block bg-orange-400 text-gray-900 px-6 py-3 rounded-md hover:bg-orange-500 transition-colors mt-5"
-                  >
-                    Learn More
-                  </a>
+                    <a
+                      href={service.link}
+                      className="inline-block bg-orange-400 text-gray-900 px-6 py-3 rounded-md hover:bg-orange-500 transition-colors mt-5"
+                    >
+                      Learn More
+                    </a>
                   </span>
                 </div>
               </div>
@@ -146,7 +208,7 @@ const Services = () => {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="-30 0 200 20"
             fill="none"
-            className="w-full max-w-[270px] md:max-w-[270px] mb-10"
+            className="w-full max-w-[290px] md:max-w-[290px] mb-10"
           >
             <path
               d="M10 10c20 5 40 2 60 0s40-10 60-5"
@@ -275,7 +337,7 @@ const Services = () => {
               Looking for tailored services? Request a quote and let’s start
               planning your next project together.
             </p>
-            <Link href="/contact">
+            <Link href="/get-quote">
               <span className="inline-block bg-orange-500 text-gray-900 px-6 py-3 rounded-full hover:bg-orange-600 transition-colors cursor-pointer">
                 Get a Quote
               </span>

@@ -36,19 +36,44 @@ const TermsAndConditions = () => {
           <div className="prose max-w-none leading-relaxed text-lg">
             <section>
               <h2 className="text-3xl font-bold mb-4">1. Introduction</h2>
+              <div className='space-y-5'>
               <p>
-                Welcome to Web Bricks LLC. Please review our Terms and
-                Conditions of Use carefully, as they impact your legal rights
-                and include provisions for resolving any disputes that may arise
-                between us. Your agreement to these terms signifies your consent
-                to the outlined terms and conditions.
+                Welcome to Web Briks LLC. Please review our Terms and Conditions
+                of Use carefully, as they impact your legal rights and include
+                provisions for resolving any disputes that may arise between us.
+                Your agreement to these terms signifies your consent to the
+                outlined terms and conditions.
               </p>
+              <p>
+                Thank you for choosing **Web Briks LLC** (“we,” “us,” “our”).
+                By using our website (webBriks.com) and services (collectively,
+                the “Site”), or accessing any content provided by us, you
+                (“you,” “client,” “user”) are entering into a binding agreement
+                with us.
+              </p>
+              <p>
+                Our company operates with a registered office located at 1209
+                Mountain Road PL NE, Ste R, Albuquerque, NM, 87110, and an
+                operational office at House 106, 1/1 Zigzag Road, Masterpara,
+                Gaibandha, Bangladesh. We are committed to delivering
+                high-quality services tailored to the unique needs of our
+                clients.
+              </p>
+              <p>
+                {`In these Terms and Conditions, the term **"Client"** refers to the individual, company, or organization that engages **Web Briks LLC** for professional services. **"Service"** encompasses any task, project, or work provided by Web Briks, including but not limited to Graphic Design, Photo Editing, Web Development, Virtual Assistance, and Digital Marketing.`}
+              </p>
+              <p>
+                {`
+                A **"Project"** refers to the specific scope of work agreed upon between Web Briks and the Client, detailing the deliverables, deadlines, and expectations. The **"Agreement"** is the legally binding contract between Web Briks and the Client, governed by these Terms, outlining the services to be provided. **"Third-Party Application"** refers to any external software, platform, or tool used by Web Briks in the course of providing services. 
+                `}
+              </p>
+              </div>
             </section>
 
             <section>
               <h2 className="text-3xl font-bold mt-8 mb-4">2. Age</h2>
               <p>
-                To use Web Bricks services and access our content, you must meet
+                To use Web Briks services and access our content, you must meet
                 the following criteria:
               </p>
               <ul className="list-disc pl-8 mb-4">
@@ -59,7 +84,7 @@ const TermsAndConditions = () => {
                 </li>
                 <li>
                   You must have the legal capacity to enter into a binding
-                  contract with Web Bricks.
+                  contract with Web Briks.
                 </li>
                 <li>
                   You must be a resident of a country where our services are
@@ -73,7 +98,7 @@ const TermsAndConditions = () => {
                 3. Scope of Services
               </h2>
               <p>
-                At Web Bricks LLC, we offer a wide range of outsourcing services
+                At Web Briks LLC, we offer a wide range of outsourcing services
                 tailored to meet the specific needs of our clients. Our core
                 services include Graphics Design and Photo Editing, Web Design
                 and Development, Virtual Assistant and Digital Marketing
@@ -83,14 +108,14 @@ const TermsAndConditions = () => {
                   1. Customization of Services
                 </h2>
                 <p>
-                  At Web Bricks LLC, We understand that every business is
-                  unique. Our services are fully customizable based on the
-                  specific goals, requirements, and budget of each client. We
-                  collaborate closely with clients to understand their
-                  objectives and deliver tailored solutions that align with
-                  their business strategies. Whether it’s a one-time project or
-                  ongoing support, our flexibility ensures that we adapt our
-                  offerings to fit the client’s needs.
+                  At Web Briks LLC, We understand that every business is unique.
+                  Our services are fully customizable based on the specific
+                  goals, requirements, and budget of each client. We collaborate
+                  closely with clients to understand their objectives and
+                  deliver tailored solutions that align with their business
+                  strategies. Whether it’s a one-time project or ongoing
+                  support, our flexibility ensures that we adapt our offerings
+                  to fit the client’s needs.
                 </p>
                 <h2 className="text-xl font-bold mt-8 mb-4">
                   2. Client-Provided Information
@@ -103,7 +128,7 @@ const TermsAndConditions = () => {
                   images, text, branding guidelines, or functional requirements.
                   It is the client’s responsibility to provide true, accurate,
                   and complete information to ensure successful project
-                  outcomes. Web Bricks LLC is not liable for delays, errors, or
+                  outcomes. Web Briks LLC is not liable for delays, errors, or
                   quality issues that arise due to incomplete or inaccurate data
                   from the client. In every engagement, we aim to maintain open
                   communication, ensuring that clients are informed at every
@@ -117,8 +142,8 @@ const TermsAndConditions = () => {
                 4. User Guidelines
               </h2>
               <p>
-                At Web Bricks LLC, we value professionalism and mutual respect
-                in all interactions. To ensure a positive and efficient working
+                At Web Briks LLC, we value professionalism and mutual respect in
+                all interactions. To ensure a positive and efficient working
                 relationship, we have established clear expectations for how
                 clients should engage with our services. By using our services,
                 clients agree to abide by the following guidelines:
@@ -128,7 +153,7 @@ const TermsAndConditions = () => {
                   1. Professional Communication
                 </h2>
                 <p>
-                  Clients are expected to communicate with Web Bricks LLC in a
+                  Clients are expected to communicate with Web Briks LLC in a
                   clear, respectful, and professional manner. This includes
                   providing concise and accurate project briefs, timely
                   responses to inquiries, and maintaining open dialogue
@@ -152,7 +177,7 @@ const TermsAndConditions = () => {
                 <p>
                   We encourage respectful interaction at all times. Offensive,
                   discriminatory, or unprofessional behavior towards our team
-                  will not be tolerated. Web Bricks LLC promotes a positive
+                  will not be tolerated. Web Briks LLC promotes a positive
                   working environment, and we expect our clients to treat our
                   team members with dignity and respect. Similarly, our team
                   will always uphold the same standards of professionalism in
@@ -163,7 +188,7 @@ const TermsAndConditions = () => {
                 </h2>
                 <p>
                   Clients are strictly prohibited from engaging in any of the
-                  following activities while using Web Bricks’ services:
+                  following activities while using Web Briks’ services:
                 </p>
                 <ul className="list-disc pl-8 mb-4 mt-2">
                   <li>
@@ -184,7 +209,7 @@ const TermsAndConditions = () => {
                 </ul>
                 <p>
                   Any content provided by the client must comply with legal and
-                  ethical standards. Web Bricks LLC reserves the right to refuse
+                  ethical standards. Web Briks LLC reserves the right to refuse
                   to work on projects that violate these guidelines or involve
                   illegal, unethical, or harmful content.
                 </p>
@@ -208,7 +233,7 @@ const TermsAndConditions = () => {
                   </li>
                   <li>
                     Service Termination: In cases of serious or repeated
-                    breaches of these guidelines, Web Bricks LLC reserves the
+                    breaches of these guidelines, Web Briks LLC reserves the
                     right to terminate the service agreement immediately.
                     Clients will be notified of the termination, and any
                     outstanding work or payments will be handled as outlined in
@@ -223,7 +248,7 @@ const TermsAndConditions = () => {
                 5. Pricing and Payment Terms
               </h2>
               <p>
-                Web Bricks LLC offers flexible pricing options based on the
+                Web Briks LLC offers flexible pricing options based on the
                 nature and scope of the services provided. Here’s a detailed
                 outline of our pricing and payment terms:
               </p>
@@ -337,11 +362,11 @@ const TermsAndConditions = () => {
                   Client-Initiated Cancellation: Clients may cancel a project at
                   any time. Refunds, if any, will be determined based on the
                   amount of work completed up to the point of cancellation. Web
-                  Bricks LLC reserves the right to charge for work performed and
+                  Briks LLC reserves the right to charge for work performed and
                   costs incurred before cancellation.
                 </li>
                 <li>
-                  Web Bricks-Initiated Cancellation: Web Bricks LLC reserves the
+                  Web Briks-Initiated Cancellation: Web Briks LLC reserves the
                   right to cancel a project if the client violates the terms of
                   service or fails to cooperate in a reasonable manner. In such
                   cases, refunds may not be provided, and the client may be
@@ -356,20 +381,19 @@ const TermsAndConditions = () => {
               <ul className="list-disc pl-8 mb-4">
                 <li>
                   Ownership and Transfer: Upon full payment, clients receive
-                  ownership of the final deliverables produced by Web Bricks
-                  LLC. This includes all work specifically created for the
-                  client’s project. And, we won’t use it for our purposes in
-                  future.{" "}
+                  ownership of the final deliverables produced by Web Briks LLC.
+                  This includes all work specifically created for the client’s
+                  project. And, we won’t use it for our purposes in future.{" "}
                 </li>
                 <li>
-                  Web Bricks Rights: Web Bricks LLC retains ownership of all
+                  Web Briks Rights: Web Briks LLC retains ownership of all
                   project files, templates, and design elements not explicitly
                   transferred to the client (free works). We also reserve the
                   right to use these elements in future projects.
                 </li>
                 <li>
                   Copyrights and Trademarks: Any designs, concepts, or templates
-                  created by Web Bricks LLC remain the property of Web Bricks,
+                  created by Web Briks LLC remain the property of Web Briks,
                   including copyrights and trademarks. Ownership of these rights
                   will only be transferred to the client if explicitly stated in
                   the service agreement.
@@ -381,7 +405,7 @@ const TermsAndConditions = () => {
                 8. Revisions and Modifications
               </h2>
               <p>
-                Web Bricks LLC includes a specified number of revisions in the
+                Web Briks LLC includes a specified number of revisions in the
                 scope of each service, as outlined in the project agreement. Our
                 aim is to satisfy clients. So revisions will continue until the
                 client approves the project. Once the project approves, we may
@@ -398,11 +422,11 @@ const TermsAndConditions = () => {
                 9. Limitation of Liability
               </h2>
               <p>
-                Web Bricks LLC shall not be held liable for any indirect,
+                Web Briks LLC shall not be held liable for any indirect,
                 incidental, or consequential damages arising from service
                 interruptions, data loss, or errors during the provision of our
                 services. In cases where third-party applications or software
-                are involved, Web Bricks LLC limits its liability to issues
+                are involved, Web Briks LLC limits its liability to issues
                 directly arising from our services. We are not responsible for
                 any problems or damages caused by the performance,
                 functionality, or reliability of third-party tools or software
@@ -416,14 +440,14 @@ const TermsAndConditions = () => {
                 10. Changes to Terms
               </h2>
               <p>
-                Web Bricks LLC reserves the right to update or modify these
-                Terms and Conditions at any time to reflect changes in our
-                services, business practices, or legal requirements. Clients
-                will be notified of any significant changes through email or
-                through a notice on our website. Continued use of our services
-                following such updates constitutes acceptance of the revised
-                terms. It is the clients responsibility to review the terms
-                periodically to stay informed of any changes.
+                Web Briks LLC reserves the right to update or modify these Terms
+                and Conditions at any time to reflect changes in our services,
+                business practices, or legal requirements. Clients will be
+                notified of any significant changes through email or through a
+                notice on our website. Continued use of our services following
+                such updates constitutes acceptance of the revised terms. It is
+                the clients responsibility to review the terms periodically to
+                stay informed of any changes.
               </p>
             </section>
 
@@ -434,10 +458,10 @@ const TermsAndConditions = () => {
               <p>
                 For inquiries, disputes, or issues, please contact us at{" "}
                 <Link
-                  href="mailto:info@webbricks.com"
+                  href="mailto:info@webbriks.com"
                   className="text-blue-500 underline"
                 >
-                  info@webbricks.com
+                  info@webbriks.com
                 </Link>
                 .
               </p>

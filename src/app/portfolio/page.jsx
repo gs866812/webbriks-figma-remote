@@ -145,7 +145,7 @@ const Portfolio = () => {
                 <h3 className="text-2xl font-bold mt-4">{project.title}</h3>
                 <p className="text-lg mt-2">{project.description}</p>
                 <Link href={project.link}>
-                  <span className="inline-block mt-4 text-orange-500 font-semibold cursor-pointer">
+                  <span className="inline-block mt-4 text-orange-400 font-semibold cursor-pointer">
                     Read More
                   </span>
                 </Link>
@@ -184,7 +184,7 @@ const Portfolio = () => {
                   </p>
                   <div className="mt-auto">
                     <Link href={project.link}>
-                      <span className="inline-block bg-orange-500 text-gray-900 px-4 py-2 rounded-full hover:bg-orange-600 transition-colors cursor-pointer">
+                      <span className="inline-block bg-gray-800 text-gray-200 px-4 py-2 rounded-md hover:bg-orange-400 hover:text-gray-800 transition-colors cursor-pointer">
                         View Details
                       </span>
                     </Link>

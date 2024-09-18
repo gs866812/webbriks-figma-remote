@@ -13,40 +13,34 @@ import {
 import { toast } from "react-toastify";
 
 const Contact = () => {
-
-  
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch('/api', { // Correct path
-        method: 'POST',
+      const response = await fetch("/api", {
+        // Correct path
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
-  
+
       if (response.ok) {
         reset();
-        toast.success('Email sent successfully');
+        toast.success("Email sent successfully");
       } else {
-        toast.error('Failed to send email');
+        toast.error("Failed to send email");
       }
     } catch (error) {
-      toast.error('Error: ' + error.message); // Display error message
+      toast.error("Error: " + error.message); // Display error message
     }
   };
-  
-
-
-  
-
-  
 
   return (
     <div>
@@ -75,12 +69,12 @@ const Contact = () => {
               <div className="flex items-center mb-4">
                 <FaMapMarkerAlt className="text-gray-800 text-2xl mr-3" />
                 <p className="text-lg">
-                  1234 Your Street, Your City, Your Country
+                  1209, Mountain Road PL NE, STE R, ALBUQUERQUE, NM, 87110
                 </p>
               </div>
               <div className="flex items-center mb-4">
                 <FaPhoneAlt className="text-gray-800 text-2xl mr-3" />
-                <p className="text-lg">Phone: (123) 456-7890</p>
+                <p className="text-lg">Phone: +1 718 577 1232</p>
               </div>
               <div className="flex items-center mb-4">
                 <FaEnvelope className="text-gray-800 text-2xl mr-3" />
@@ -207,7 +201,7 @@ const Contact = () => {
                 </div>
                 <button
                   type="submit"
-                  className="bg-orange-500 text-gray-900 px-6 py-3 rounded-full hover:bg-orange-600 transition-colors w-full"
+                  className="bg-orange-500 text-gray-900 px-6 py-3 rounded-md hover:bg-orange-600 transition-colors w-full"
                 >
                   Send Message
                 </button>
@@ -224,7 +218,7 @@ const Contact = () => {
           <div className="w-full h-64 md:h-96">
             <iframe
               className="w-full h-full border-0 rounded-md"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0118891254337!2d144.9537353159248!3d-37.816178979751294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf0727a9089c3c50a!2sYour%20Office!5e0!3m2!1sen!2sau!4v1590123456789!5m2!1sen!2sau"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6529.265165747791!2d-106.56197188528013!3d35.09091194614237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87220a95517c54df%3A0x3e76bfbf9c67468!2s1209%20Mountain%20Rd%20Pl%20NE%2C%20Albuquerque%2C%20NM%2087110%2C%20USA!5e0!3m2!1sen!2sbd!4v1726564154813!5m2!1sen!2sbd"
               allowFullScreen=""
               loading="lazy"
             ></iframe>
