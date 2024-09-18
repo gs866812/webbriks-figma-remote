@@ -14,7 +14,7 @@ const SubTitle = () => {
       <TypewriterComponent
         options={{
           strings: [
-            `<span>We provide <span style="color: #FFA500;">top-notch design</span>, <span style="color: #FF4500;">development</span>, and <span style="color: #1E90FF;">digital marketing</span> services to help your business thrive.</span>`,
+            `<span>We provide <span style="color: #FFA500;">top-notch Graphics design</span>, <span style="color: #FF4500;">Web design and development</span>, and <span style="color: #1E90FF;">digital marketing</span> services to help your business thrive.</span>`,
           ],
           autoStart: true,
           loop: true,

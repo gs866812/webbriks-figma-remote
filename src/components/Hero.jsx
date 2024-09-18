@@ -10,7 +10,7 @@ const Hero = () => {
                     Transforming Your Vision into Creative Results
                 </h1>
                 <p className="text-white text-lg md:text-xl text-center mb-8">
-                    We provide top-notch design, development, and digital marketing services to help your business thrive.
+                    We provide top-notch Graphics design, Web design & development, and digital marketing services to help your business thrive.
                 </p>
                 <div>
 
