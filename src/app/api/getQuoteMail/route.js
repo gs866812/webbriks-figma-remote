@@ -48,14 +48,19 @@ export async function POST(req) {
 
     // If files were uploaded, attach them to the email
     if (files.length > 0) {
-      mailOptions.attachments = await Promise.all(files.map(async (file, index) => {
-        const buffer = await file.arrayBuffer(); // Convert file to arrayBuffer
-        return {
-          filename: file.name,
-          content: Buffer.from(buffer), // Convert arrayBuffer to Buffer
-          contentDisposition: 'attachment', // Force it to be treated as an attachment
-        };
-      }));
+      const attachments = await Promise.all(
+        files.map(async (file) => {
+          const buffer = Buffer.from(await file.arrayBuffer()); // Convert file to buffer asynchronously
+          return {
+            filename: file.name, // Use the original filename
+            content: buffer, // Attach the file content
+            contentDisposition: 'attachment', // Ensure it's treated as an attachment
+            contentType: file.type, // Use the file's MIME type
+          };
+        })
+      );
+
+      mailOptions.attachments = attachments; // Attach the files
     }
 
     // Send the email
