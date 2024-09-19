@@ -1,69 +1,67 @@
 import nodemailer from 'nodemailer';
 
-export const config = {
-  api: {
-    bodyParser: false, // Disable Next.js's default body parser
-  },
-};
-
 export async function POST(req) {
-  const formData = await req.formData();
-  const fullName = formData.get("fullName") || "N/A";
-  const email = formData.get("email") || "N/A";
-  const phone = formData.get("phone") || "N/A";
-  const website = formData.get("website") || "N/A";
-  const driveLink = formData.get("driveLink") || "N/A";
-  const message = formData.get("message") || "N/A";
-  const services = formData.getAll("services[]");
+  try {
+    // Handle multipart/form-data using Next.js built-in `FormData` API
+    const formData = await req.formData();
 
-  // Extracting files from the form data
-  const files = formData.getAll("files");
+    // Extract fields from the formData
+    const fullName = formData.get('fullName') || 'N/A';
+    const email = formData.get('email') || 'N/A';
+    const phone = formData.get('phone') || 'N/A';
+    const website = formData.get('website') || 'N/A';
+    const message = formData.get('message') || 'N/A';
+    const driveLink = formData.get('driveLink') || 'N/A';
+    const services = formData.getAll('services[]'); // Array of services
 
-  // Helper function to convert ReadableStream to Buffer
-  const streamToBuffer = async (stream) => {
-    const chunks = [];
-    for await (const chunk of stream) {
-      chunks.push(chunk);
-    }
-    return Buffer.concat(chunks);
-  };
+    // Extract files
+    const files = formData.getAll('files'); // File list (if any)
 
-  // Convert file streams to Buffers
-  const fileAttachments = await Promise.all(
-    files.map(async (file, index) => ({
-      filename: file.name,
-      content: await streamToBuffer(file.stream()), // Convert stream to Buffer
-    }))
-  );
+    // Setup Nodemailer transporter
+    const transporter = nodemailer.createTransport({
+      host: 'gsarwar.com',
+      port: 587,
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
 
-  // Setup Nodemailer transporter
-  const transporter = nodemailer.createTransport({
-    host: 'webbriks.com',
-    port: 587,
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-  });
-
-  const mailOptions = {
-    from: `"${fullName}" <${email}>`,
-    to: 'info@webbriks.com',
-    subject: 'New Quote Request',
-    text: `
+    // Build the email content
+    const mailMessage = `
       Full Name: ${fullName}
       Email: ${email}
       Phone: ${phone}
       Website: ${website}
       Drive Link: ${driveLink}
-      Services: ${services.join(', ')}
+      Services Requested: ${services.length ? services.join(', ') : 'N/A'}
       Message: ${message}
-    `,
-    attachments: fileAttachments, // Attach files to the email
-  };
+    `;
 
-  try {
+    // Define the email options
+    const mailOptions = {
+      from: `"${fullName}" <${email}>`,
+      to: 'hello@gsarwar.com',
+      subject: 'New Quote Request',
+      text: mailMessage,
+    };
+
+    // If files were uploaded, attach them to the email
+    if (files.length > 0) {
+      mailOptions.attachments = await Promise.all(files.map(async (file, index) => {
+        const buffer = await file.arrayBuffer(); // Convert file to arrayBuffer
+        return {
+          filename: file.name,
+          content: Buffer.from(buffer), // Convert arrayBuffer to Buffer
+          contentDisposition: 'attachment', // Force it to be treated as an attachment
+        };
+      }));
+    }
+
+    // Send the email
     await transporter.sendMail(mailOptions);
+
+    // Return a success response
     return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (error) {
     console.error('Failed to send email:', error);
