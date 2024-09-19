@@ -101,7 +101,8 @@ const GetQuote = () => {
     });
 
     try {
-      const response = await fetch("/api/getQuoteMail", {
+      const baseUrl = window.location.origin; // Dynamically get the base URL 
+      const response = await fetch(`${baseUrl}/api/getQuoteMail`, {
         method: "POST",
         body: formDataToSend,
       });
