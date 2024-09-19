@@ -74,8 +74,10 @@ const GetQuote = () => {
     return isServiceSelected && fullName && email && phone;
   };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
 
     if (!validateForm()) {
       toast.warn("Please fill all required fields and select at least one service.");
@@ -102,7 +104,7 @@ const GetQuote = () => {
 
     try {
       const baseUrl = window.location.origin; // Dynamically get the base URL 
-      const response = await fetch(`${baseUrl}/api/getQuoteMail`, {
+      const response = await fetch(`${baseUrl}/api/getQuoteMail/route`, {
         method: "POST",
         body: formDataToSend,
       });
@@ -134,6 +136,8 @@ const GetQuote = () => {
       toast.error("Error: " + error.message);
     }
   };
+
+
 
   return (
     <div className="container mx-auto p-5">
