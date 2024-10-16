@@ -8,43 +8,23 @@ const services = [
     title: "Graphics Design",
     description:
       "Creative and compelling graphic design services to make your brand stand out.",
-    link: "/services/graphics-design",
+    link: "/services",
   },
   {
     imgSrc: "https://iili.io/dXdEN3b.gif",
     title: "Photo Editing",
     description:
       "Professional photo editing services to enhance your images to perfection.",
-    link: "/services/photo-editing",
+    link: "/services",
   },
   {
     imgSrc: "https://iili.io/dXduPov.gif",
     title: "Web Design & Development",
     description:
       "Custom websites that are responsive, fast, and tailored to your business needs.",
-    link: "/services/web-design-development",
+    link: "/services",
   },
-  {
-    imgSrc: "https://iili.io/dXduiVR.gif",
-    title: "Virtual Assistant",
-    description:
-      "Reliable virtual assistant services to help manage your daily tasks efficiently.",
-    link: "/services/virtual-assistant",
-  },
-  {
-    imgSrc: "https://iili.io/dXduUHF.gif",
-    title: "Video Editing",
-    description:
-      "High-quality video editing services to bring your stories to life.",
-    link: "/services/video-editing",
-  },
-  {
-    imgSrc: "https://iili.io/dXdu4DJ.gif",
-    title: "Digital Marketing",
-    description:
-      "Strategic digital marketing solutions to grow your online presence.",
-    link: "/services/digital-marketing",
-  },
+
 ];
 
 const ServicesSection = () => {

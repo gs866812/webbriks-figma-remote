@@ -77,7 +77,7 @@ function NavListMenu() {
         allowHover={true}
       >
         {/* Dropdown */}
-        {/* <MenuHandler>
+        <MenuHandler>
           <Typography
             as="div"
             variant="medium"
@@ -92,29 +92,27 @@ function NavListMenu() {
               <Link href='/services'>Services</Link>
               <ChevronDownIcon
                 strokeWidth={2.5}
-                className={`hidden h-3 w-3 transition-transform lg:block ${
-                  isMenuOpen ? "rotate-180" : ""
-                }`}
+                className={`hidden h-3 w-3 transition-transform lg:block ${isMenuOpen ? "rotate-180" : ""
+                  }`}
               />
               <ChevronDownIcon
                 strokeWidth={2.5}
-                className={`block h-3 w-3 transition-transform lg:hidden ${
-                  isMobileMenuOpen ? "rotate-180" : ""
-                }`}
+                className={`block h-3 w-3 transition-transform lg:hidden ${isMobileMenuOpen ? "rotate-180" : ""
+                  }`}
               />
             </ListItem>
           </Typography>
-        </MenuHandler> */}
+        </MenuHandler>
         <MenuList className="hidden rounded-xl lg:block mt-3">
           {/* Nested menu */}
-          {/* <Menu
+          <Menu
             placement="right-start"
             allowHover
             offset={15}
             open={openNestedMenu}
             handler={setopenNestedMenu}
           >
-            <MenuHandler className="flex items-center justify-between">
+            {/* <MenuHandler className="flex items-center justify-between">
               <MenuItem>
                 Figma
                 <ChevronUpIcon
@@ -124,31 +122,31 @@ function NavListMenu() {
                   }`}
                 />
               </MenuItem>
-            </MenuHandler>
+            </MenuHandler> */}
             <MenuList className="rounded-xl">{renderItems}</MenuList>
-          </Menu> */}
-          
-          <MenuItem><Link href="/graphics-design">Graphics design</Link></MenuItem>
-          <MenuItem><Link href="/photo-editing">Photo editing</Link></MenuItem>
-          <MenuItem><Link href="/web-design-and-development">Web design & development</Link></MenuItem>
-          <MenuItem><Link href="/virtual-assistant">Virtual assistant</Link></MenuItem>
-          <MenuItem><Link href="/video-editing">Video editing</Link></MenuItem>
-          <MenuItem><Link href="/digital-marketing">Digital marketing</Link></MenuItem>
+          </Menu>
+
+          <MenuItem><a href="/services/graphics-design">Graphics design</a></MenuItem>
+          <MenuItem><a href="/services/photo-editing">Photo editing</a></MenuItem>
+          <MenuItem><a href="/services/web-design-and-development">Web design & development</a></MenuItem>
+          {/* <MenuItem><Link href="/services/virtual-assistant">Virtual assistant</Link></MenuItem> */}
+          {/* <MenuItem><Link href="/services/video-editing">Video editing</Link></MenuItem>
+          <MenuItem><Link href="/services/digital-marketing">Digital marketing</Link></MenuItem> */}
         </MenuList>
       </Menu>
 
 
       <div className="block lg:hidden">
         <Collapse open={isMobileMenuOpen} className='space-y-1'>
-        {/* Nested menu */}
-          {/* <Menu
+          {/* Nested menu */}
+          <Menu
             placement="bottom"
             allowHover
             offset={6}
             open={openNestedMenu}
             handler={setopenNestedMenu}
           >
-            <MenuHandler className="flex items-center justify-between">
+            {/* <MenuHandler className="flex items-center justify-between">
               <MenuItem>
                 Figma
                 <ChevronUpIcon
@@ -158,17 +156,18 @@ function NavListMenu() {
                   }`}
                 />
               </MenuItem>
-            </MenuHandler>
+            </MenuHandler> */}
             <MenuList className="block rounded-xl lg:hidden">
               {renderItems}
             </MenuList>
-          </Menu> */}
-          <MenuItem className='bg-gray-500'><Link href="/graphics-design">Graphics design</Link></MenuItem>
-          <MenuItem className='bg-gray-500'><Link href="/photo-editing">Photo editing</Link></MenuItem>
-          <MenuItem className='bg-gray-500'><Link href="/web-design-and-development">Web design & development</Link></MenuItem>
-          <MenuItem className='bg-gray-500'><Link href="/virtual-assistant">Virtual assistant</Link></MenuItem>
-          <MenuItem className='bg-gray-500'><Link href="/video-editing">Video editing</Link></MenuItem>
-          <MenuItem className='bg-gray-500'><Link href="/digital-marketing">Digital marketing</Link></MenuItem>
+          </Menu>
+          <MenuItem className='bg-gray-500'><a href="/services/graphics-design">Graphics design</a></MenuItem>
+          <MenuItem className='bg-gray-500'><a href="/services/photo-editing">Photo editing</a></MenuItem>
+          <MenuItem className='bg-gray-500'><a href="/services/web-design-and-development">Web design & development</a></MenuItem>
+          {/* <MenuItem className='bg-gray-500'><Link href="/services/virtual-assistant">Virtual assistant</Link></MenuItem> */}
+          {/* <MenuItem className='bg-gray-500'><Link href="/services/video-editing">Video editing</Link></MenuItem>
+          <MenuItem className='bg-gray-500'><Link href="/services/digital-marketing">Digital marketing</Link>
+          </MenuItem> */}
         </Collapse>
       </div>
     </React.Fragment>
@@ -199,8 +198,8 @@ function NavList() {
       >
         <ListItem className={`flex items-center gap-2 py-2 pr-4 ${currentPath === '/about' ? 'bg-white text-black' : ''}`}>About</ListItem>
       </Typography>
-      {/* <NavListMenu /> */}
-      <Typography
+      <NavListMenu />
+      {/* <Typography
         as="a"
         href="/services"
         variant="medium"
@@ -208,7 +207,7 @@ function NavList() {
         color="white"
       >
         <ListItem className={`flex items-center gap-2 py-2 pr-4 ${currentPath === '/services' ? 'bg-white text-black' : ''}`}>Services</ListItem>
-      </Typography>
+      </Typography> */}
       <Typography
         as="a"
         href="/portfolio"
@@ -276,7 +275,7 @@ export function NavigationbarWithDropdownMultilevelMenu() {
         <Collapse open={openNav}>
           <NavList />
           <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
-          <Link
+            <Link
               href="/get-quote"
               className="bg-orange-400 text-gray-900 px-2 py-1 rounded hover:bg-orange-500 transition"
             >

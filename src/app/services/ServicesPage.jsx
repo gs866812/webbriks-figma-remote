@@ -8,7 +8,8 @@ import Image from "next/legacy/image";
 import OurProcess from "@/components/OurProcess";
 import { FaAngleDoubleRight } from "react-icons/fa";
 
-const Services = () => {
+
+const ServicesPage = () => {
   useEffect(() => {
     aos.init({
       duration: 1000,
@@ -65,42 +66,6 @@ const Services = () => {
         "Web applications development",
       ],
     },
-    {
-      imgSrc: "https://iili.io/dNomZKb.png", // Replace with appropriate images
-      title: "Virtual Assistant",
-      description: `We help you streamline your workload and focus on the core aspects of your business. Our skilled virtual assistants handle various tasks efficiently and reliably. With our assistance, you can free up time to focus on business growth.
-      Our services include:
-`,
-      link: "/services/virtual-assistant",
-      listItems: [
-        "Administrative duties",
-        "Lead generation",
-        "Scheduling to customer support",
-        "Web research",
-        "Data entry, and more. ",
-      ],
-    },
-    {
-      imgSrc: "https://iili.io/dNomLiu.png", // Replace with appropriate images
-      title: "Video Editing",
-      description: "High-quality video editing to bring your vision to life.",
-      link: "/services/video-editing",
-    },
-    {
-      imgSrc: "https://iili.io/dNomtlj.png", // Replace with appropriate images
-      title: "Digital Marketing",
-      description: `Do you want to grow your business with data-driven strategies? Without it, you will lose your money, effort, and business opportunities as well. We run marketing campaigns utilizing data appropriately that help to boost brand visibility, drive targeted traffic, and increase conversions. We help to grow your business by reaching the right audience with the right message. 
-      Our services include
-`,
-      link: "/services/digital-marketing",
-      listItems: [
-        "SEO",
-        "Social Media Marketing",
-        "Email Marketing",
-        "Conversion rate optimization",
-        "PPC advertising",
-      ],
-    },
   ];
 
   return (
@@ -146,9 +111,8 @@ const Services = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`flex flex-col md:flex-row items-center gap-8 p-8 rounded-lg shadow-lg hover:shadow-xl bg-white ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
+                className={`flex flex-col md:flex-row items-center gap-8 p-8 rounded-lg shadow-lg hover:shadow-xl bg-white ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  }`}
               >
                 {/* Image Section */}
                 <div
@@ -170,16 +134,16 @@ const Services = () => {
                     {service.description}
                   </p>
 
-                    {/* List Items */}
-                {service.listItems && (
-                  <ul className="list-inside mb-4 space-y-1">
-                    {service.listItems.map((item, i) => (
-                      <li key={i} className="text-gray-600 text-md flex gap-2 items-center">
-                        <FaAngleDoubleRight /> {item}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                  {/* List Items */}
+                  {service.listItems && (
+                    <ul className="list-inside mb-4 space-y-1">
+                      {service.listItems.map((item, i) => (
+                        <li key={i} className="text-gray-600 text-md flex gap-2 items-center">
+                          <FaAngleDoubleRight /> {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
 
                   <span>
                     <a
@@ -201,7 +165,7 @@ const Services = () => {
 
       {/* case studies */}
 
-      <section className="py-16 bg-gray-100 text-gray-800" data-aos="fade-up">
+      {/* <section className="py-16 bg-gray-100 text-gray-800" data-aos="fade-up">
         <div className="container mx-auto px-5 flex flex-col items-center">
           <h2 className="text-3xl font-bold text-center">Case Studies</h2>
           <svg
@@ -320,7 +284,7 @@ const Services = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Call to Action Section */}
       <section
@@ -349,4 +313,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default ServicesPage;

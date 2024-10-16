@@ -12,7 +12,11 @@ import {
 } from "react-icons/fa";
 import { toast } from "react-toastify";
 
-const Contact = () => {
+
+
+
+
+const ContactUsPage = () => {
   const {
     register,
     handleSubmit,
@@ -69,37 +73,30 @@ const Contact = () => {
               <div className="flex items-center mb-4">
                 <FaMapMarkerAlt className="text-gray-800 text-2xl mr-3" />
                 <p className="text-lg">
-                  1209, Mountain Road PL NE, STE R, ALBUQUERQUE, NM, 87110
+                  Web briks, LLC. 1209, Mountain Road PL NE, STE R, ALBUQUERQUE, NM, 87110
                 </p>
               </div>
               <div className="flex items-center mb-4">
                 <FaPhoneAlt className="text-gray-800 text-2xl mr-3" />
-                <p className="text-lg">Phone: +1 718 577 1232</p>
+                <p className="text-lg">Phone: <a href="tel:+17185771232" className="hover:underline" title="Click to call">+1 718 577 1232</a></p>
               </div>
               <div className="flex items-center mb-4">
                 <FaEnvelope className="text-gray-800 text-2xl mr-3" />
-                <p className="text-lg">Email: info@webbriks.com</p>
+                <p className="text-lg">Email: <a href="mailto:info@webbriks.com" className="text-gray-800 hover:underline">info@webbriks.com</a></p>
               </div>
               <h3 className="text-2xl font-semibold mb-4 mt-8">Follow Us</h3>
               <div className="flex gap-4">
                 <Link
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/webbriks"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-800"
                 >
                   <FaFacebook className="text-2xl" />
                 </Link>
+                
                 <Link
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-400 hover:text-blue-600"
-                >
-                  <FaTwitter className="text-2xl" />
-                </Link>
-                <Link
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/webbriks"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-700 hover:text-blue-900"
@@ -245,4 +242,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactUsPage;

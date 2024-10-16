@@ -19,11 +19,15 @@ export async function POST(req) {
 
     // Setup Nodemailer transporter
     const transporter = nodemailer.createTransport({
-      host: 'gsarwar.com',
+      host: 'smtp.gmail.com',
       port: 587,
+      secure: false,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
+      },
+      tls: {
+        rejectUnauthorized: false, // To avoid self-signed certificate errors
       },
     });
 
@@ -41,7 +45,7 @@ export async function POST(req) {
     // Define the email options
     const mailOptions = {
       from: `"${fullName}" <${email}>`,
-      to: 'gooogle.sarwar@gmail.com',
+      to: 'info@webbriks.com',
       subject: 'New Quote Request',
       text: mailMessage,
     };
