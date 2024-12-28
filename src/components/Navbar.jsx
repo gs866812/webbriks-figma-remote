@@ -17,8 +17,10 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { FiArrowUpRight } from "react-icons/fi";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 
 const nestedMenuItems = [
@@ -81,11 +83,11 @@ function NavListMenu() {
           <Typography
             as="div"
             variant="medium"
-            color="white"
+            color="black"
             className="font-medium "
           >
             <ListItem
-              className="flex items-center gap-2 py-2 pr-4 font-medium "
+              className="flex items-center gap-2 py-2 pr-4 hover:bg-transparent hover:text-orange-500 font-medium "
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((cur) => !cur)}
             >
@@ -185,18 +187,18 @@ function NavList() {
         href="/"
         variant="medium"
         className="font-medium"
-        color="white"
+        color="black"
       >
-        <ListItem className={`flex items-center gap-2 py-2 pr-4 ${currentPath === '/' ? 'bg-white text-black' : ''}`}>Home</ListItem>
+        <ListItem className={`flex items-center gap-2 py-2 pr-4 hover:bg-[#FEF9EF] hover:text-orange-500 ${currentPath === '/' ? 'text-orange-500' : ''}`}>Home</ListItem>
       </Typography>
       <Typography
         as="a"
         href="/about"
         variant="medium"
         className="font-medium"
-        color="white"
+        color="black"
       >
-        <ListItem className={`flex items-center gap-2 py-2 pr-4 ${currentPath === '/about' ? 'bg-white text-black' : ''}`}>About</ListItem>
+        <ListItem className={`flex items-center gap-2 py-2 pr-4 hover:bg-[#FEF9EF] hover:text-orange-500 ${currentPath === '/about' ? 'text-orange-500' : ''}`}>About</ListItem>
       </Typography>
       <NavListMenu />
       {/* <Typography
@@ -204,18 +206,18 @@ function NavList() {
         href="/services"
         variant="medium"
         className="font-medium"
-        color="white"
+        color="black"
       >
-        <ListItem className={`flex items-center gap-2 py-2 pr-4 ${currentPath === '/services' ? 'bg-white text-black' : ''}`}>Services</ListItem>
+        <ListItem className={`flex items-center gap-2 py-2 pr-4 hover:bg-[#FEF9EF] hover:text-orange-500 ${currentPath === '/services' ? 'text-orange-500' : ''}`}>Services</ListItem>
       </Typography> */}
       <Typography
         as="a"
         href="/portfolio"
         variant="medium"
         className="font-medium"
-        color="white"
+        color="black"
       >
-        <ListItem className={`flex items-center gap-2 py-2 pr-4 ${currentPath === '/portfolio' ? 'bg-white text-black' : ''}`}>
+        <ListItem className={`flex items-center gap-2 py-2 pr-4 hover:bg-[#FEF9EF] hover:text-orange-500 ${currentPath === '/portfolio' ? 'text-orange-500' : ''}`}>
           Portfolio
         </ListItem>
       </Typography>
@@ -224,9 +226,9 @@ function NavList() {
         href="/contact"
         variant="medium"
         className="font-medium"
-        color="white"
+        color="black"
       >
-        <ListItem className={`flex items-center gap-2 py-2 pr-4 ${currentPath === '/contact' ? 'bg-white text-black' : ''}`}>
+        <ListItem className={`flex items-center gap-2 py-2 pr-4 hover:bg-[#FEF9EF] hover:text-orange-500 ${currentPath === '/contact' ? 'text-orange-500' : ''}`}>
           Contact
         </ListItem>
       </Typography>
@@ -245,19 +247,21 @@ export function NavigationbarWithDropdownMultilevelMenu() {
   }, []);
 
   return (
-    <div className="bg-gray-800">
-      <Navbar className="shadow-none w-full rounded-none border-none mx-auto bg-transparent ">
+    <div className="bg-[#FEF9EF] lg:w-full w-[90%] mx-auto">
+      <Navbar className="shadow-none lg:w-[90%] mx-auto rounded-none bg-[#FEF9EF] px-0 border-none">
         <div className="flex items-center justify-between">
-          <Link href='/' className='text-3xl font-bold'>WEB<span className='text-orange-400'>BRIKS</span></Link>
+          <Link href='/' className=''>
+            <Image src='https://iili.io/2TW5PLb.png' alt='webbriks' width={171} height={30} priority={true} />
+          </Link>
           <div className="hidden lg:block ">
             <NavList />
           </div>
           <div className="hidden md:block">
             <Link
               href="/get-quote"
-              className="bg-orange-400 text-gray-900 px-4 py-2 rounded hover:bg-orange-500 transition"
+              className="bg-[#2B2121] text-white px-4 py-2 rounded hover:bg-orange-500 transition flex items-center gap-2"
             >
-              Get a Quote
+              <span>Get a Quote</span><span><FiArrowUpRight /></span>
             </Link>
           </div>
           <IconButton
@@ -277,7 +281,7 @@ export function NavigationbarWithDropdownMultilevelMenu() {
           <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
             <Link
               href="/get-quote"
-              className="bg-orange-400 text-gray-900 px-2 py-1 rounded hover:bg-orange-500 transition"
+              className="bg-[#2B2121] text-white px-2 py-1 rounded hover:bg-orange-500 transition"
             >
               Get a Quote
             </Link>

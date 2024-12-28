@@ -6,9 +6,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 import { NavigationbarWithDropdownMultilevelMenu } from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { ToastContainer } from "react-toastify";
 import CookieConsent from "@/components/CookieConsent";
+import FooterGlobal from "@/components/FooterGlobal";
 
 
 
@@ -23,11 +23,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light">
       <head>
-        <link rel="icon" type="image/png" href="https://iili.io/dj5tSSf.png"/>
+        <link rel="icon" type="image/png" href="https://iili.io/dj5tSSf.png" />
       </head>
-      
+
       <body>
-      <ToastContainer position="bottom-right"/>
+        <ToastContainer position="bottom-right" />
         <header className="lg:sticky lg:-top-2 z-50 shadow-md">
           <NavigationbarWithDropdownMultilevelMenu />
         </header>
@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
         <main className="z-0">{children}</main>
 
         <footer>
-          <Footer />
+          <FooterGlobal />
         </footer>
         <CookieConsent />
       </body>

@@ -1,11 +1,13 @@
 "use client";
 import AboutUs from "@/components/AboutUs";
+import Banner from "@/components/Banner";
 import CTASection from "@/components/CTASection";
+import FunFact from "@/components/FunFact";
 import OurProcess from "@/components/OurProcess";
 import PortfolioSection from "@/components/PortfolioSection";
 import ServicesSection from "@/components/ServicesSection";
-import SliderOne from "@/components/SliderOne";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import WhoWeAre from "@/components/WhoWeAre";
 import WhyChoose from "@/components/WhyChoose";
 import aos from "aos";
 import React, { useEffect } from "react";
@@ -22,14 +24,20 @@ const Home = () => {
   return (
     <div>
       <section>
-        <SliderOne />
+        <Banner />
+      </section>
+      <section className="lg:py-10 py-5">
+        <WhoWeAre />
+      </section>
+      <section className="lg:py-10 py-5">
+        <FunFact />
       </section>
       <section data-aos='fade-up'>
         <ServicesSection />
       </section>
-      <hr/>
+      <hr />
       <section data-aos='fade-up'>
-        <OurProcess/>
+        <OurProcess />
       </section>
       <section data-aos='fade-up'>
         <AboutUs />
@@ -37,9 +45,9 @@ const Home = () => {
       <section data-aos='fade-up'>
         <PortfolioSection />
       </section>
-      
+
       <section data-aos='fade-up'>
-      <WhyChoose/>
+        <WhyChoose />
       </section>
       <section data-aos='fade-up'>
         <TestimonialsCarousel />

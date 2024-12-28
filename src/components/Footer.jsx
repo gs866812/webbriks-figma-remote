@@ -51,7 +51,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="mb-2">
-                <Link href="disclaimer-policy" className="hover:text-white transition-colors">
+                <Link href="/disclaimer-policy" className="hover:text-white transition-colors">
                   Disclaimer Policy
                 </Link>
               </li>
