@@ -254,7 +254,7 @@ const AboutUsPage = () => {
         </section>
 
         {/* Team Section */}
-        <section className="py-16 bg-gray-100 text-gray-800" data-aos="fade-up">
+        {/* <section className="py-16 bg-gray-100 text-gray-800" data-aos="fade-up">
           <div className="container mx-auto px-5 flex flex-col items-center">
             <h2 className="text-3xl font-bold text-center">Meet Our Team</h2>
             <svg
@@ -287,38 +287,6 @@ const AboutUsPage = () => {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-8">
-              {/* Team Member 1 */}
-              {/* <div className="text-center">
-              <div className="relative w-40 h-40 mx-auto mb-4">
-                <Image src='https://iili.io/dh6T9Wv.jpg' alt="Team Member 1" layout="fill" objectFit="cover" className="rounded-full" />
-              </div>
-              <h3 className="text-2xl font-semibold">John Doe</h3>
-              <p className="text-orange-500">CEO & Founder</p>
-            </div> */}
-              {/* Team Member 2 */}
-              {/* <div className="text-center">
-              <div className="relative w-40 h-40 mx-auto mb-4">
-                <Image src='https://iili.io/dh6Tdfp.jpg' alt="Team Member 2" layout="fill" objectFit="cover" className="rounded-full" />
-              </div>
-              <h3 className="text-2xl font-semibold">Jane Smith</h3>
-              <p className="text-orange-500">Chief Designer</p>
-            </div> */}
-              {/* Team Member 3 */}
-              {/* <div className="text-center">
-              <div className="relative w-40 h-40 mx-auto mb-4">
-                <Image src='https://iili.io/dh6T20N.jpg' alt="Team Member 3" layout="fill" objectFit="cover" className="rounded-full" />
-              </div>
-              <h3 className="text-2xl font-semibold">Alice Johnson</h3>
-              <p className="text-orange-500">Marketing Head</p>
-            </div> */}
-              {/* Team Member 4 */}
-              {/* <div className="text-center">
-              <div className="relative w-40 h-40 mx-auto mb-4">
-                <Image src='https://iili.io/dh6T3gI.jpg' alt="Team Member 3" layout="fill" objectFit="cover" className="rounded-full" />
-              </div>
-              <h3 className="text-2xl font-semibold">Alice Johnson</h3>
-              <p className="text-orange-500">Marketing Head</p>
-            </div> */}
               {profiles.map((service, index) => (
                 <TeamMember
                   key={index}
@@ -332,7 +300,7 @@ const AboutUsPage = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="py-16 bg-gray-100 text-gray-800" data-aos="fade-up">
           <div className="container mx-auto">

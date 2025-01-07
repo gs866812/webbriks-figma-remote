@@ -1,62 +1,60 @@
-"use client";
-import AboutUs from "@/components/AboutUs";
-import Banner from "@/components/Banner";
-import CTASection from "@/components/CTASection";
-import FunFact from "@/components/FunFact";
-import OurProcess from "@/components/OurProcess";
-import PortfolioSection from "@/components/PortfolioSection";
-import ServicesSection from "@/components/ServicesSection";
-import TestimonialsCarousel from "@/components/TestimonialsCarousel";
-import WhoWeAre from "@/components/WhoWeAre";
-import WhyChoose from "@/components/WhyChoose";
-import aos from "aos";
-import React, { useEffect } from "react";
+'use client';
+
+import Banner from '@/components/home/Banner';
+import FeaturedWork from '@/components/home/FeaturedWork';
+import FrequentlyAskedQuestions from '@/components/home/FrequentlyAskedQuestions';
+import FunFact from '@/components/home/FunFact';
+import MeetOurTeamMate from '@/components/home/MeetOurTeamMate';
+import ServicesHome from '@/components/home/ServicesHome';
+import WhatClientThinkAboutUS from '@/components/home/WhatClientThinkAboutUS';
+import WhatMakesUsDifferent from '@/components/home/WhatMakesUsDifferent';
+import WhoWeAre from '@/components/home/WhoWeAre';
+import HowWeWork from '@/components/shared/HowWeWork';
+import aos from 'aos';
+import { useEffect } from 'react';
 
 const Home = () => {
-  useEffect(() => {
-    aos.init({
-      // You can customize the options here
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true, // Animation should happen only once - while scrolling down
-    });
-  }, []);
-  return (
-    <div>
-      <section>
-        <Banner />
-      </section>
-      <section className="lg:py-10 py-5">
-        <WhoWeAre />
-      </section>
-      <section className="lg:py-10 py-5">
-        <FunFact />
-      </section>
-      <section data-aos='fade-up'>
-        <ServicesSection />
-      </section>
-      <hr />
-      <section data-aos='fade-up'>
-        <OurProcess />
-      </section>
-      <section data-aos='fade-up'>
-        <AboutUs />
-      </section>
-      <section data-aos='fade-up'>
-        <PortfolioSection />
-      </section>
-
-      <section data-aos='fade-up'>
-        <WhyChoose />
-      </section>
-      <section data-aos='fade-up'>
-        <TestimonialsCarousel />
-      </section>
-      <section data-aos='fade-up'>
-        <CTASection />
-      </section>
-    </div>
-  );
+    useEffect(() => {
+        aos.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+        });
+    }, []);
+    return (
+        <div>
+            <section>
+                <Banner />
+            </section>
+            <section className="lg:py-10 py-5">
+                <WhoWeAre />
+            </section>
+            <section className="lg:py-10 py-5">
+                <FunFact />
+            </section>
+            <section className="lg:py-10 py-5">
+                <ServicesHome />
+            </section>
+            <section className="lg:py-10 py-5">
+                <FeaturedWork />
+            </section>
+            <section className="lg:py-10 py-5">
+                <HowWeWork />
+            </section>
+            <section className="lg:py-10 py-5">
+                <FrequentlyAskedQuestions />
+            </section>
+            <section className="lg:py-10 py-5">
+                <WhatMakesUsDifferent />
+            </section>
+            {/* <section className="lg:py-10 py-5">
+                <MeetOurTeamMate />
+            </section> */}
+            <section className="lg:py-10 py-5">
+                <WhatClientThinkAboutUS />
+            </section>
+        </div>
+    );
 };
 
 export default Home;
